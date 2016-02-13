@@ -1,0 +1,44 @@
+.home {
+    .widgets {
+        .widgets-container {
+
+            &.widgets-large {
+                width: $width;
+
+                @media #{$query-fit} {
+                    display: none;
+                }
+
+                &:nth-of-type(even) {
+                    width: calc(#{$width} * 2 / 3);
+                }
+            }
+
+            &.widgets-medium {
+                display: none;
+                width: calc(#{$width} * 2 / 3);
+
+                @media #{$query-fit} {
+                    display: flex;
+                }
+
+                @media #{$query-medium} {
+                    display: none !important;
+                }
+
+                &:nth-of-type(even) {
+                    width: calc(#{$width} * 1 / 3);
+                }
+            }
+
+            &.widgets-small {
+                display: none;
+                flex-direction: column;
+
+                @media #{$query-medium} {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

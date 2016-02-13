@@ -1,0 +1,13 @@
+<div class="detail" ng-controller="DetailCtrl">
+    <div class="hero" style="background-color: {{ projectDetails.colors.background }}; color: {{ projectDetails.colors.text }}">
+        <div class="icon" style="background-image: url('{{ projectDetails.icon }}');" ng-show="projectDetails.icon"></div>
+        <div class="icon" style="background-color: {{ projectDetails.colors.hex }};" ng-hide="projectDetails.icon"></div>
+        <div class="content">
+            <h1 class="title">{{ projectDetails.title }}</h1>
+        </div>
+    </div>
+    <div class="article" ng-controller="ArticleCtrl">
+        <div class="{{ section.type }}" ng-repeat="section in articleSections" ui-view="{{ section.type }}">
+        </div>
+    </div>
+</div>

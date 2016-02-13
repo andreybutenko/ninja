@@ -1,0 +1,115 @@
+<div class="home" ng-controller="HomeCtrl">
+    <div class="hero">
+        <div class="logo"><img class="sizer" src="/assets/img/ninja.png" /></div>
+        <div class="content">
+            <h1 class="title">Andrey Butenko</h1>
+            <h2 class="mission">I create modern solutions to real-world problems.</h2>
+        </div>
+    </div>
+    <div class="about">
+        <h2 class="title">How can I solve problems?</h2>
+        <div class="about-container">
+            <div class="node empathy">
+                <div class="icon-container">
+                    <i class="fa fa-comments-o"></i>
+                </div>
+                <h2>Understanding</h2>
+                <p>
+                    The only way to genuinely address a problem is to understand the person you're designing for and their unique challenges - empathy.
+                    In all my recent projects, I've interviewed the people I'm designing for to know what needs I'm trying to satisfy.
+                </p>
+            </div>
+            <div class="node programming">
+                <div class="icon-container">
+                    <i class="fa fa-code"></i>
+                </div>
+                <h2>Code</h2>
+                <p>
+                    My specialty is the web. I develop for the full-stack: front-end, back-end, and databases.
+                    This lets me understand not just how to achieve a technical feature on one level, but how to integrate that functionality in the most efficient, clean, and maintainable way.
+                </p>
+            </div>
+            <div class="node education">
+                <div class="icon-container">
+                    <i class="fa fa-graduation-cap"></i>
+                </div>
+                <h2>Knowledge</h2>
+                <p>
+                    I believe understanding through multiple perspectives leads to the most effective, most creative solutions.
+                    While I'm in school, I'm studying as many of these perspectives as I can. I study <a href="http://ihsimb.ourschoolpages.com/Home" target="_blank">music</a>, <a href="http://www.inglemoorfbla.org/" target="_blank">business</a>, <a href="http://thisisthefuture.org" target="_blank">design, engineering</a>, and others.
+                    Understanding these different areas of knowledge allows me to produce better results.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio">
+        <div class="portfolio-node" ng-repeat="entry in entries" style="background-color: {{ darken(entry.colors.background, entry.colors.factor || -0.1) }}">
+            <div class="portfolio-container" style="color: {{ entry.colors.text }}; background-color: {{ entry.colors.background }}">
+                <div class="hexagon preview" style="background-image: url('{{ entry.icon }}');" ng-show="entry.icon"></div>
+                <div class="hexagon preview" style="background-color: {{ entry.colors.hex }};" ng-hide="entry.icon"></div>
+                <div class="content">
+                    <h2 class="name">{{ entry.title }}</h2>
+                    <span class="timeframe">{{ entry.timeframe }}</span>
+                    <p class="description">{{ entry.description }}</p>
+                    <div class="footer">
+                        <span ng-repeat="tag in entry.tags"><span class="tag">{{ tag }}</span> </span>
+                        <a ui-sref="^.detail({ project: '{{ entry.id }}' })" class="info" style="color: {{ entry.colors.background }}; background-color: {{ entry.colors.text }}" ng-hide="entry.info">More info</a>
+                        <span class="info" style="color: {{ entry.colors.background }}; background-color: {{ entry.colors.text }}" ng-show="entry.info">Details coming soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="node github">
+            <div class="icon-container">
+                <i class="fa fa-github"></i>
+            </div>
+            <p>
+                I haven't used GitHub much, but plan on beginning to work on there more often soon.
+            </p>
+            <a href="https://github.com/ghostmancer" class="link" target="_blank">github.com/ghostmancer</a>
+        </div>
+        <div class="node email">
+            <div class="icon-container">
+                <i class="fa fa-envelope-o"></i>
+            </div>
+            <p>
+                Feel free to contact me if you want to work with me on a project or have a question.
+            </p>
+            <a href="mailto:hello@andrey.ninja" class="link" target="_blank">hello@andrey.ninja</a>
+        </div>
+        <div class="node codepen">
+            <div class="icon-container">
+                <i class="fa fa-codepen"></i>
+            </div>
+            <p>
+                Once in a while, I put experiments on Codepen.
+            </p>
+            <a href="http://codepen.io/ghostmancer/" class="link" target="_blank">codepen.io/ghostmancer</a>
+        </div>
+    </div>
+    <div class="widgets">
+        <div class="widgets-container widgets-large" ng-class="{ 'first': $index == 0 }" ng-repeat="cluster in widgetCluster.large">
+            <div class="widget-node" ng-class="{ 'widget-fade': widget.fade }" ng-repeat="widget in cluster" style="background-color: {{ widget.colors.background }}; color: {{ widget.colors.text }}">
+                <h2 class="name" ng-hide="widget.fade">{{ widget.title }}</h2>
+                <span class="tag" ng-hide="widget.fade">{{ widget.description }}</span>
+                <a href="{{ widget.link }}" ng-hide="widget.fade" style="background-color: {{ widget.colors.button }}; color: {{ widget.colors.buttonText }};" target="_blank">Go to</a>
+            </div>
+        </div>
+        <div class="widgets-container widgets-medium" ng-class="{ 'first': $index == 0 }" ng-repeat="cluster in widgetCluster.medium">
+            <div class="widget-node" ng-class="{ 'widget-fade': widget.fade }" ng-repeat="widget in cluster" style="background-color: {{ widget.colors.background }}; color: {{ widget.colors.text }}">
+                <h2 class="name" ng-hide="widget.fade">{{ widget.title }}</h2>
+                <span class="tag" ng-hide="widget.fade">{{ widget.description }}</span>
+                <a href="{{ widget.link }}" ng-hide="widget.fade" style="background-color: {{ widget.colors.button }}; color: {{ widget.colors.buttonText }};" target="_blank">Go to</a>
+            </div>
+        </div>
+        <div class="widgets-container widgets-small first">
+            <div class="widget-node" ng-class="{ 'widget-fade': widget.fade }" ng-repeat="widget in widgetCluster.small" style="background-color: {{ widget.colors.background }}; color: {{ widget.colors.text }}">
+                <h2 class="name" ng-hide="widget.fade">{{ widget.title }}</h2>
+                <span class="tag" ng-hide="widget.fade">{{ widget.description }}</span>
+                <a href="{{ widget.link }}" ng-hide="widget.fade" style="background-color: {{ widget.colors.button }}; color: {{ widget.colors.buttonText }};" target="_blank">Go to</a>
+            </div>
+        </div>
+    </div>
+</div>

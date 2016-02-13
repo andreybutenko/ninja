@@ -1,0 +1,9 @@
+$accentText: #585858;
+$darkColor: #333333;
+$link: #4aa3df;
+$width: 960px;
+
+
+$query-small: "only screen and (max-width : 550px)"; //@media #{$query-small} {}
+$query-medium: "only screen and (max-width: 820px)";
+$query-fit: "only screen and (max-width: #{$width})";

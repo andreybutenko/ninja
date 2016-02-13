@@ -1,0 +1,63 @@
+.home {
+    .hero {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        height: 75vh;
+        width: 100%;
+
+        @media #{$query-medium} {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .logo {
+            margin-right: 1em;
+            min-width: 455px;
+            width: 30%;
+            height: 100%;
+            flex: 0 0 30%;
+            background-image: url('/assets/img/ninja.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            @media #{$query-medium} {
+                min-width: 0;
+                max-width: 480px;
+                width: 100%;
+                flex-basis: auto;
+            }
+
+            .sizer {
+                visibility: hidden;
+                max-width: 100%;
+            }
+        }
+
+        .content {
+            width: 50%;
+            flex: 0 0 50%;
+            padding-left: 1em;
+
+            @media #{$query-medium} {
+                width: 100%;
+                flex-basis: auto;
+                padding: 1em;
+            }
+
+            .title {
+                font-weight: 200;
+                font-size: 3em;
+            }
+
+            .mission {
+                font-weight: 200;
+                font-size: 2em;
+                color: $accentText;
+            }
+        }
+    }
+}

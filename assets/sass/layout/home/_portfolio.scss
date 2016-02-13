@@ -1,0 +1,93 @@
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .portfolio-node {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .portfolio-container {
+            width: $width;
+            max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+            margin-top: -1em;
+
+            @media #{$query-small} {
+                & {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            .hexagon {
+                margin-bottom: 1em;
+                width: 200px;
+                height: 200px;
+                flex: 0 0 200px;
+                -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+
+            .preview {
+                background-repeat: none;
+                background-size: cover;
+                margin-right: 20px;
+                @media #{$query-small} {
+                    & {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .content {
+                flex: 1 1;
+
+                .name {
+                    margin: 0;
+                    font-weight: 200;
+                    font-size: 2em;
+                }
+
+                @media #{$query-small} {
+                    .name, .timeframe {
+                        display: block;
+                        text-align: center;
+                    }
+                }
+
+                .footer {
+                    width: 100%;
+
+                    .tag {
+                        display: inline-block;
+                        background-color: #4aa3df;
+                        color: white;
+                        font-size: 0.8em;
+                        padding: 0.5em;
+                        margin-right: 0.5em;
+                        margin-bottom: 0.5em;
+                        -webkit-column-break-inside: avoid;
+                    }
+
+                    .info {
+                        display: inline-block;
+                        font-weight: 700;
+                        cursor: pointer;
+                        font-size: 0.8em;
+                        padding: 0.5em;
+                        -webkit-column-break-inside: avoid;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
