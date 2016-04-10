@@ -42,9 +42,9 @@
             </div>
         </div>
     </div>
-    <div class="portfolio">
-        <div class="portfolio-node" ng-repeat="entry in entries" style="background-color: {{ darken(entry.colors.background, entry.colors.factor || -0.1) }}">
-            <div class="portfolio-container" style="color: {{ entry.colors.text }}; background-color: {{ entry.colors.background }}">
+    <div class="portfolio responsive-container">
+        <div class="portfolio-node responsive-container responsive-full" ng-repeat="entry in entries" style="background-color: {{ darken(entry.colors.background, entry.colors.factor || -0.1) }}">
+            <div class="portfolio-container responsive responsive-container responsive-horizontal" style="color: {{ entry.colors.text }}; background-color: {{ entry.colors.background }}">
                 <div class="hexagon preview" style="background-image: url('{{ entry.icon }}');" ng-show="entry.icon"></div>
                 <div class="hexagon preview" style="background-color: {{ entry.colors.hex }};" ng-hide="entry.icon"></div>
                 <div class="content">
@@ -59,34 +59,39 @@
                 </div>
             </div>
         </div>
+        <div class="portfolio-node portfolio-blank responsive-container responsive-full">
+            <div class="portfolio-container responsive responsive-container responsive-horizontal"></div>
+        </div>
     </div>
     <div class="contact">
-        <div class="node github">
-            <div class="icon-container">
-                <i class="fa fa-github"></i>
+        <div class="contact-container">
+            <div class="node github">
+                <div class="icon-container">
+                    <i class="fa fa-github"></i>
+                </div>
+                <p>
+                    Home to projects.
+                </p>
+                <a href="https://github.com/ghostmancer" class="link" target="_blank">github.com/ghostmancer</a>
             </div>
-            <p>
-                I haven't used GitHub much, but plan on beginning to work on there more often soon.
-            </p>
-            <a href="https://github.com/ghostmancer" class="link" target="_blank">github.com/ghostmancer</a>
-        </div>
-        <div class="node email">
-            <div class="icon-container">
-                <i class="fa fa-envelope-o"></i>
+            <div class="node email">
+                <div class="icon-container">
+                    <i class="fa fa-envelope-o"></i>
+                </div>
+                <p>
+                    For any questions!
+                </p>
+                <a href="mailto:hello@andrey.ninja" class="link" target="_blank">hello@andrey.ninja</a>
             </div>
-            <p>
-                Feel free to contact me if you want to work with me on a project or have a question.
-            </p>
-            <a href="mailto:hello@andrey.ninja" class="link" target="_blank">hello@andrey.ninja</a>
-        </div>
-        <div class="node codepen">
-            <div class="icon-container">
-                <i class="fa fa-codepen"></i>
+            <div class="node codepen">
+                <div class="icon-container">
+                    <i class="fa fa-codepen"></i>
+                </div>
+                <p>
+                    Home to experiments.
+                </p>
+                <a href="http://codepen.io/ghostmancer/" class="link" target="_blank">codepen.io/ghostmancer</a>
             </div>
-            <p>
-                Once in a while, I put experiments on Codepen.
-            </p>
-            <a href="http://codepen.io/ghostmancer/" class="link" target="_blank">codepen.io/ghostmancer</a>
         </div>
     </div>
     <div class="widgets">

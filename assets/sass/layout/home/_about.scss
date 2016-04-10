@@ -6,20 +6,23 @@
         flex-direction: column;
         align-items: center;
         flex-wrap: nowrap;
-        padding-top: 1em;
+        padding: 1em 0;
 
         .title {
             font-weight: 200;
         }
 
         .about-container {
+            width: $superWidth;
+            max-width: 100%;
             display: flex;
             flex-direction: row;
             align-items: flex-start;
             flex-wrap: nowrap;
 
-            @media #{$query-small} {
+            @media #{$query-medium} {
                 flex-direction: column;
+                align-items: center;
             }
 
             .node {
@@ -30,7 +33,7 @@
                 align-items: center;
                 flex-wrap: nowrap;
 
-                @media #{$query-small} {
+                @media #{$query-medium} {
                     padding: 0.5em 2em;
                     flex-basis: auto;
                 }
@@ -66,7 +69,7 @@
                 }
 
                 &.programming {
-                    @media #{$query-small} {
+                    @media #{$query-medium} {
                         order: -1;
                     }
                 }

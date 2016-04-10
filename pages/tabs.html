@@ -1,0 +1,9 @@
+<div class="menu-container" ng-controller="TabCtrl">
+    <div class="menu" ng-class="{ 'open': menuOpened }">
+        <a class="title" ui-sref="^.home">Andrey Butenko</a>
+        <div class="tab-expand" ng-click="toggleMenu()"><div class="icon"><i class="fa fa-bars"></i></div></div>
+        <div class="tabs">
+            <a class="tab" ng-repeat="tab in tabs" ui-sref="^.{{ tab.sref }}" ng-class="{ 'selected': getTabStatus(tab.key) }">{{ tab.text }}</a>
+        </div>
+    </div>
+</div>

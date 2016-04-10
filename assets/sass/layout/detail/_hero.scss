@@ -5,9 +5,10 @@
         flex-wrap: nowrap;
         align-items: center;
         justify-content: flex-end;
-        height: 300px;
+        height: 375px;
         width: 100%;
         margin-bottom: 1em;
+        padding-top: 75px;
 
         @media #{$query-medium} {
             flex-direction: column;

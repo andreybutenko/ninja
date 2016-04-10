@@ -1,0 +1,27 @@
+.responsive-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.responsive-full {
+        width: 100%;
+    }
+
+    &.responsive-horizontal {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        @media #{$query-small} {
+            & {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    .responsive {
+        width: $width;
+        max-width: 100%;
+    }
+}

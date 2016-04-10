@@ -21,7 +21,6 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['Design', 'Construction', 'Team IDEA'],
             description: 'To-Go Bowls are wasteful for the world, and inconvenient for the user. This project addressed both those issues.',
             icon: '/assets/img/cup-icon.png',
-            info: true,
             colors: {
                 background: '#628a5c',
                 text: '#ffffff',
@@ -141,6 +140,30 @@ ninja.factory('Data', ['$http', function($http) {
     ];
 
     var details = {
+        bowl: [
+            {
+                type: 'paragraph',
+                data: {
+                    text: 'The purpose of this project was to faddress several major issues with to-go boxes. They\'re bad for the environment in that styrofoam is not compostable, they\'re difficult to use because they cannot fit in one hand and be eaten "on the go", and they cannot be microwaved to be re-heated.'
+                }
+            },
+            {
+                type: 'paragraph',
+                data: {
+                    text: ''
+                }
+            },
+            {
+                type: 'list',
+                data: {
+                    content: [
+                        'Compostable or recyclable; not destined for the landfill',
+                        'Hand-held',
+                        ''
+                    ]
+                }
+            }
+        ],
         vasn: [
             {
                 type: 'paragraph',

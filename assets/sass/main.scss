@@ -3,6 +3,9 @@
 
 @import 'util/vars';
 @import 'util/etc';
+@import 'util/base';
+
+@import 'layout/tabs';
 
 @import 'layout/home/portfolio';
 @import 'layout/home/hero';
@@ -16,3 +19,7 @@
 @import 'layout/article/article';
 @import 'layout/article/paragraph';
 @import 'layout/article/header';
+
+@import 'layout/skills/main';
+@import 'layout/skills/technologies';
+@import 'layout/skills/physical';

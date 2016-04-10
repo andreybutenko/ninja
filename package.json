@@ -1,0 +1,21 @@
+{
+  "name": "kiosk",
+  "version": "1.0.0",
+  "description": "Inglemoor Kiosk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghostmancer/kiosk/git"
+  },
+  "author": "Andrey Butenko",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.9.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-autoprefixer": "~0.2.20130806"
+  }
+}

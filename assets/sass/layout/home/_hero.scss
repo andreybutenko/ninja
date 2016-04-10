@@ -9,6 +9,7 @@
         width: 100%;
 
         @media #{$query-medium} {
+            padding-top: 100px;
             flex-direction: column;
             height: auto;
         }

@@ -1,0 +1,66 @@
+.skills-container {
+    .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        padding: 0 1em;
+
+        .technology-node {
+            flex: 0 0 50%;
+            display: flex;
+            align-items: center;
+
+            margin: 1em 0;
+
+            @media #{$query-medium} {
+                flex: 0 0 100%;
+            }
+
+            $icon-size: 150px;
+            $icon-border: 10px;
+
+            .technology-icon-container {
+                flex: 0 0 $icon-size;
+                width: $icon-size;
+                height: $icon-size;
+                background-color: $darkColor;
+                -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .technology-icon {
+                    background-color: white;
+                    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                    width: $icon-size - $icon-border;
+                    height: $icon-size - $icon-border;
+                    background-size: 75%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+
+            .technology-content {
+                flex-grow: 1;
+                padding: 1em;
+
+                .technology-name {
+                    font-weight: bold;
+                    margin-bottom: 0.5em;
+                }
+
+                .technology-description {
+
+                }
+
+                .technology-proficiency {
+                    margin-top: 0.5em;
+                    font-weight: bold;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

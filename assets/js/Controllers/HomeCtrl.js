@@ -61,7 +61,9 @@ ninja.controller('HomeCtrl', ['$scope', '$state', 'Data', function($scope, $stat
     }
 
 
-    lengthen();
+    if($scope.entries[0].firstLoad != true) {
+        lengthen();
+    }
     cluster(3, 2, 'large');
     trim(3, 2, 'large');
 
@@ -76,4 +78,6 @@ ninja.controller('HomeCtrl', ['$scope', '$state', 'Data', function($scope, $stat
     }
 
     $scope.darken = darken;
+
+    $scope.entries[0].firstLoad = true;
 }]);
