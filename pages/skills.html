@@ -1,28 +1,11 @@
 <div class="skills-container responsive-container" ng-controller="SkillsCtrl">
-    <div class="responsive">
-        <div class="technologies-container">
-            <h1>Technologies</h1>
-            <div class="technologies">
-                <div class="technology-node" ng-repeat="technology in skills.technology">
-                    <div class="technology-icon-container">
-                        <div class="technology-icon" style="background-image: url('{{ technology.icon }}'); background-size: {{ technology.size }};"></div>
-                    </div>
-                    <div class="technology-content">
-                        <div class="technology-name">{{ technology.name }}</div>
-                        <div class="technology-description">{{ technology.description }}</div>
-                        <div class="technology-proficiency">{{ technology.proficiency }}</div>
-                    </div>
-                </div>
-            </div>
+    <div class="skills-view responsive">
+        <div class="skills-tabs-container">
+            <div class="skills-tab" ng-repeat="(skillIndex, skill) in skills" ng-class="{ 'selected': isTabSelected(skillIndex) }" ng-click="switchToTab(skillIndex)">{{ skill.name }}</div>
         </div>
-        <div class="physical-container">
-            <h1>Physical Design Skills</h1>
-            <div class="physical">
-                <div class="physical-tabs">
-                    <div class="physical-tab" ng-repeat="(skillIndex, skill) in skills.physical" ng-class="{ 'selected': isPhysicalTabSelected(skillIndex) }" ng-click="physicalTabSwitch(skillIndex)">{{ skill.name }}</div>
-                </div>
-                <div class="physical-view" ng-repeat="(skillIndex, skill) in skills.physical" ui-view="{{ getView(skillIndex) }}" ng-show="isPhysicalTabSelected(skillIndex)"></div>
-            </div>
+        <div class="skill-container">
+            <h1>{{ getCurrentTab().name }}</h1>
+            <div class="skill-view {{ skill.id }}" ng-repeat="(skillIndex, skill) in skills" ui-view="{{ skill.id }}" ng-show="isTabSelected(skillIndex)"></div>
         </div>
     </div>
 </div>

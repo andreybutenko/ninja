@@ -1,0 +1,10 @@
+<div class="technology-node" ng-repeat="technology in getSkill('technologies').data">
+    <div class="technology-icon-container">
+        <div class="technology-icon" style="background-image: url('{{ technology.icon }}'); background-size: {{ technology.size }};"></div>
+    </div>
+    <div class="technology-content">
+        <div class="technology-name">{{ technology.name }}</div>
+        <div class="technology-description">{{ technology.description }}</div>
+        <div class="technology-proficiency">{{ technology.proficiency }}</div>
+    </div>
+</div>

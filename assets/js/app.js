@@ -47,6 +47,9 @@ ninja.config(function($stateProvider, $urlRouterProvider) {
                 'tabs': {
                     templateUrl: '/pages/tabs.html'
                 },
+                'technologies@skills': {
+                    templateUrl: '/pages/skills/technologies.html'
+                },
                 'sketching@skills': {
                     templateUrl: '/pages/skills/sketching.html'
                 },

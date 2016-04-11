@@ -8,7 +8,7 @@
         .technology-node {
             flex: 0 0 50%;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
 
             margin: 1em 0;
 
@@ -16,10 +16,11 @@
                 flex: 0 0 100%;
             }
 
-            $icon-size: 150px;
-            $icon-border: 10px;
+            $icon-size: 80px;
+            $icon-border: 5px;
 
             .technology-icon-container {
+                margin-top: 20px;
                 flex: 0 0 $icon-size;
                 width: $icon-size;
                 height: $icon-size;

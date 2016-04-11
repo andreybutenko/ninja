@@ -1,0 +1,71 @@
+.skills-container {
+    @media #{$query-large} {
+        position: absolute;
+        max-width: 960px;
+        width: calc(100% - 200px);
+        right: 0;
+    }
+
+    @media #{$query-small} {
+        position: relative;
+        max-width: inherit;
+        width: inherit;
+        right: inherit;
+    }
+
+    .skills-view {
+        display: flex;
+        min-height: 100%;
+
+        .skills-tabs-container {
+            position: fixed;
+            left: 0;
+            top: 75px;
+            bottom: 0;
+            width: calc(50% - #{$width / 2});
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            background-color: $darkColor;
+            color: white;
+            flex: 0 0 150px;
+
+            @media #{$query-large} {
+                width: 200px;
+            }
+
+            @media #{$query-small} {
+                position: relative;
+                left: auto;
+                top: auto;
+                bottom: auto;
+                width: auto;
+
+                flex-direction: row;
+                flex-wrap: wrap;
+                text-align: center;
+                background-color: inherit;
+                flex-basis: auto;
+            }
+
+            .skills-tab {
+                padding: 1em 5px 1em 1em;
+                cursor: pointer;
+
+                @media #{$query-small} {
+                    flex: 0 0 calc(50% - 10px);
+                    margin: 5px;
+                    background-color: $darkColor;
+                }
+
+                &.selected {
+                    background-color: $link;
+                }
+            }
+        }
+
+        .skill-container {
+            flex: 1 0;
+        }
+    }
+}
