@@ -1,0 +1,16 @@
+<div class="project-ribbon responsive-container" style="background-color: {{ darken(project.colors.background, project.colors.factor || -0.1) }}">
+    <div class="ribbon-content responsive" style="color: {{ project.colors.text }}; background-color: {{ project.colors.background }}">
+        <div class="hexagon preview ribbon-icon" style="background-image: url('{{ project.icon }}');" ng-show="project.icon"></div>
+        <div class="hexagon preview ribbon-icon" style="background-color: {{ project.colors.hex }};" ng-hide="project.icon"></div>
+        <div class="ribbon-text">
+            <h2 class="title">{{ project.title }}</h2>
+            <span class="timeframe">{{ project.timeframe }}</span>
+            <p class="description">{{ project.description }}</p>
+            <div class="footer">
+                <span ng-repeat="tag in project.tags"><span class="tag ribbon-tag">{{ tag }}</span> </span>
+                <a ui-sref="^.detail({ project: '{{ project.id }}' })" class="info ribbon-button" style="color: {{ project.colors.background }}; background-color: {{ project.colors.text }}" ng-hide="project.info">More info</a>
+                <span class="info ribbon-button" style="color: {{ project.colors.background }}; background-color: {{ project.colors.text }}" ng-show="project.info">Details coming soon</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-var ninja = angular.module('ninja', ['ui.router', 'ngSanitize']);
+var ninja = angular.module('ninja', ['ui.router', 'ngAnimate', 'ngSanitize']);
 
 ninja.run(function($rootScope) {
     $rootScope.$on('$stateChangeSuccess', function() {

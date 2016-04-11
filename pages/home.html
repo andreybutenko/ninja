@@ -6,94 +6,68 @@
             <h2 class="mission">I create modern solutions to real-world problems.</h2>
         </div>
     </div>
-    <div class="about">
+    <div class="feature feature-dark">
         <h2 class="title">How can I solve problems?</h2>
-        <div class="about-container">
-            <div class="node empathy">
-                <div class="icon-container">
-                    <i class="fa fa-comments-o"></i>
-                </div>
-                <h2>Understanding</h2>
-                <p>
-                    The only way to genuinely address a problem is to understand the person you're designing for and their unique challenges - empathy.
-                    In all my recent projects, I've interviewed the people I'm designing for to know what needs I'm trying to satisfy.
-                </p>
-            </div>
-            <div class="node programming">
-                <div class="icon-container">
-                    <i class="fa fa-code"></i>
-                </div>
-                <h2>Code</h2>
-                <p>
-                    My specialty is the web. I develop for the full-stack: front-end, back-end, and databases.
-                    This lets me understand not just how to achieve a technical feature on one level, but how to integrate that functionality in the most efficient, clean, and maintainable way.
-                </p>
-            </div>
-            <div class="node education">
-                <div class="icon-container">
-                    <i class="fa fa-graduation-cap"></i>
-                </div>
-                <h2>Knowledge</h2>
-                <p>
-                    I believe understanding through multiple perspectives leads to the most effective, most creative solutions.
-                    While I'm in school, I'm studying as many of these perspectives as I can. I study <a href="http://ihsimb.ourschoolpages.com/Home" target="_blank">music</a>, <a href="http://www.inglemoorfbla.org/" target="_blank">business</a>, <a href="http://thisisthefuture.org" target="_blank">design, engineering</a>, and others.
-                    Understanding these different areas of knowledge allows me to produce better results.
-                </p>
-            </div>
+        <div class="feature-container">
+            <feature label="Understanding" class="empathy" icon="fa-comments-o">
+                The only way to genuinely address a problem is to understand who you're designing for and their unique challenges. In other words, to pursue empathy.
+            </feature>
+            <feature label="Code" class="programming feature-first" icon="fa-code">
+                My specialty is the web. I develop for the full-stack: front-end, back-end, and databases.
+                This allows me to coordinate development and increase maintainability on multiple levels.
+            </feature>
+            <feature label="Knowledge" class="education" icon="fa-graduation-cap">
+                I believe understanding multiple perspectives leads to the most effective, creative solutions.
+                I'm studying as many areas as possible, including music, business, <a href="http://thisisthefuture.org" target="_blank">design and engineering</a>, and others.
+            </feature>
         </div>
     </div>
-    <div class="portfolio responsive-container">
-        <div class="portfolio-node responsive-container responsive-full" ng-repeat="entry in entries" style="background-color: {{ darken(entry.colors.background, entry.colors.factor || -0.1) }}">
-            <div class="portfolio-container responsive responsive-container responsive-horizontal" style="color: {{ entry.colors.text }}; background-color: {{ entry.colors.background }}">
-                <div class="hexagon preview" style="background-image: url('{{ entry.icon }}');" ng-show="entry.icon"></div>
-                <div class="hexagon preview" style="background-color: {{ entry.colors.hex }};" ng-hide="entry.icon"></div>
-                <div class="content">
-                    <h2 class="name">{{ entry.title }}</h2>
-                    <span class="timeframe">{{ entry.timeframe }}</span>
-                    <p class="description">{{ entry.description }}</p>
-                    <div class="footer">
-                        <span ng-repeat="tag in entry.tags"><span class="tag">{{ tag }}</span> </span>
-                        <a ui-sref="^.detail({ project: '{{ entry.id }}' })" class="info" style="color: {{ entry.colors.background }}; background-color: {{ entry.colors.text }}" ng-hide="entry.info">More info</a>
-                        <span class="info" style="color: {{ entry.colors.background }}; background-color: {{ entry.colors.text }}" ng-show="entry.info">Details coming soon</span>
+    <div class="portfolio responsive-container" ng-controller="PortfolioCtrl">
+        <div class="filter-container responsive-container">
+            <div class="filter responsive">
+                <div class="left-column">
+                    <h3 class="title">Filters</h3>
+                    <input type="text" class="text" ng-model="searchText" placeholder="Type to Filter">
+                </div>
+                <div class="right-column">
+                    <h3 class="category-title">Categories</h3>
+                    <div class="category-list">
+                        <div class="category" ng-class="{ selected: categorySelected('programming') }" ng-click="categorySwitch('programming')"><i class="fa fa-check"></i> Programming</div>
+                        <div class="category" ng-class="{ selected: categorySelected('physical') }" ng-click="categorySwitch('physical')"><i class="fa fa-check"></i> Physical Design</div>
                     </div>
                 </div>
             </div>
         </div>
+        <project-ribbon ng-repeat="project in projects | filter:{ category: categorySelected() } | filter:searchText as filtered" info="{{ project.id }}"></project-ribbon>
+
+        <div class="project-ribbon responsive-container no-results" style="background-color: #4a4a4a" ng-show="filtered.length == 0">
+            <div class="ribbon-content responsive" style="color: white; background-color: #333333">
+                <div class="hexagon preview ribbon-icon-text" style="background-color: white;"><span>:(</span></div>
+                <div class="ribbon-text">
+                    <h2 class="title">{{ searchText }}</h2>
+                    <p class="description">Sorry, that doesn't match anything! <a style="background-color: white; color: black;" class="btn" ng-click="searchText = ''">Reset search.</a></p>
+                </div>
+            </div>
+        </div>
+
         <div class="portfolio-node portfolio-blank responsive-container responsive-full">
             <div class="portfolio-container responsive responsive-container responsive-horizontal"></div>
         </div>
     </div>
-    <div class="contact">
-        <div class="contact-container">
-            <div class="node github">
-                <div class="icon-container">
-                    <i class="fa fa-github"></i>
-                </div>
-                <p>
-                    Home to projects.
-                </p>
-                <a href="https://github.com/ghostmancer" class="link" target="_blank">github.com/ghostmancer</a>
-            </div>
-            <div class="node email">
-                <div class="icon-container">
-                    <i class="fa fa-envelope-o"></i>
-                </div>
-                <p>
-                    For any questions!
-                </p>
-                <a href="mailto:hello@andrey.ninja" class="link" target="_blank">hello@andrey.ninja</a>
-            </div>
-            <div class="node codepen">
-                <div class="icon-container">
-                    <i class="fa fa-codepen"></i>
-                </div>
-                <p>
-                    Home to experiments.
-                </p>
-                <a href="http://codepen.io/ghostmancer/" class="link" target="_blank">codepen.io/ghostmancer</a>
-            </div>
+    <div class="feature">
+        <div class="feature-container">
+            <feature class="github" icon="fa-github" btnUrl="https://github.com/ghostmancer" btnTag="github.com/ghostmancer">
+                For projects.
+            </feature>
+            <feature class="email feature-first" icon="fa-envelope-o" btnUrl="mailto:hello@andrey.ninja" btnTag="hello@andrey.ninja">
+                For questions!
+            </feature>
+            <feature class="github" icon="fa-github" btnurl="http://codepen.io/ghostmancer/" btntag="codepen.io/ghostmancer">
+                For experiments.
+            </feature>
         </div>
     </div>
+    <!--
     <div class="widgets">
         <div class="widgets-container widgets-large" ng-class="{ 'first': $index == 0 }" ng-repeat="cluster in widgetCluster.large">
             <div class="widget-node" ng-class="{ 'widget-fade': widget.fade }" ng-repeat="widget in cluster" style="background-color: {{ widget.colors.background }}; color: {{ widget.colors.text }}">
@@ -116,5 +90,5 @@
                 <a href="{{ widget.link }}" ng-hide="widget.fade" style="background-color: {{ widget.colors.button }}; color: {{ widget.colors.buttonText }};" target="_blank">Go to</a>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>

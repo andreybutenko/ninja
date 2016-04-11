@@ -5,6 +5,12 @@
 @import 'util/etc';
 @import 'util/base';
 
+@import 'elements/responsive';
+@import 'elements/feature';
+@import 'elements/project-ribbon';
+@import 'elements/category-switcher';
+@import 'elements/links';
+
 @import 'layout/tabs';
 
 @import 'layout/home/portfolio';
