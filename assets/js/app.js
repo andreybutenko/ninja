@@ -51,19 +51,19 @@ ninja.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: '/pages/skills/technologies.html'
                 },
                 'sketching@skills': {
-                    templateUrl: '/pages/skills/sketching.html'
+                    templateUrl: '/pages/skills/slideshow.html'
                 },
                 'cad@skills': {
-                    templateUrl: '/pages/skills/cad.html'
+                    templateUrl: '/pages/skills/slideshow.html'
                 },
-                'prototyping@skills': {
-                    templateUrl: '/pages/skills/prototyping.html'
+                'editing@skills': {
+                    templateUrl: '/pages/skills/slideshow.html'
                 },
                 'model@skills': {
-                    templateUrl: '/pages/skills/model.html'
+                    templateUrl: '/pages/skills/slideshow.html'
                 },
-                'illustrator@skills': {
-                    templateUrl: '/pages/skills/illustrator.html'
+                'other@skills': {
+                    templateUrl: '/pages/skills/other.html'
                 }
             }
         });

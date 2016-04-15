@@ -259,23 +259,103 @@ ninja.factory('Data', ['$http', function($http) {
         },
         {
             name: 'Sketching',
-            id: 'sketching'
+            id: 'sketching',
+            data: [
+                {
+                    title: 'Garlic Press',
+                    url: '/assets/img/skills/sketches/garlic press.jpg'
+                },
+                {
+                    title: 'Jeep',
+                    url: '/assets/img/skills/sketches/jeep.jpg'
+                },
+                {
+                    title: 'Violin',
+                    url: '/assets/img/skills/sketches/violin.jpg'
+                },
+                {
+                    title: 'Toolbox',
+                    url: '/assets/img/skills/sketches/craftsman.jpg'
+                },
+                {
+                    title: 'Shoes',
+                    url: '/assets/img/skills/sketches/shoes.jpg'
+                }
+            ]
         },
         {
             name: 'CAD',
-            id: 'cad'
+            id: 'cad',
+            data: [
+                {
+                    title: 'Laptop Cart; back view',
+                    url: '/assets/img/skills/cartcad-back.png'
+                },
+                {
+                    title: 'Laptop Cart; exposed internals',
+                    url: '/assets/img/skills/cartcad-exposed.png'
+                }
+            ]
         },
         {
-            name: 'Prototyping',
-            id: 'prototyping'
+            name: 'Photo Editing',
+            id: 'editing',
+            data: [
+                {
+                    title: 'Mechanical Pencil Knight',
+                    url: '/assets/img/skills/editing/knight.png'
+                },
+                {
+                    title: 'Abstract',
+                    url: '/assets/img/skills/editing/blackandpointy.png'
+                },
+                {
+                    title: 'Flight!',
+                    url: '/assets/img/skills/editing/flight.png'
+                },
+                {
+                    title: 'Album Cover',
+                    url: '/assets/img/skills/editing/oblin.png'
+                },
+                {
+                    title: 'Vortex',
+                    url: '/assets/img/skills/editing/gplabs.png'
+                },
+                {
+                    title: 'Violin',
+                    url: '/assets/img/skills/editing/violin.png'
+                }
+            ]
         },
         {
             name: 'Model Making',
-            id: 'model'
+            id: 'model',
+            data: [
+                {
+                    title: 'Desk Organizer',
+                    url: '/assets/img/skills/deskorganizer-2.jpg'
+                },
+                {
+                    title: 'To-Go Bowl',
+                    url: '/assets/img/skills/bowl-final.jpg'
+                },
+                {
+                    title: 'Cardboard Chair',
+                    url: '/assets/img/skills/chair.jpg'
+                },
+                {
+                    title: 'Temperature Modelling',
+                    url: '/assets/img/skills/temperaturemodelling.jpg'
+                },
+                {
+                    title: 'Laptop Cart',
+                    url: '/assets/img/skills/cart.jpg'
+                }
+            ]
         },
         {
-            name: 'Illustrator',
-            id: 'illustrator'
+            name: 'Other Skills',
+            id: 'other'
         }
     ]
 

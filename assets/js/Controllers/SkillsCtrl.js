@@ -1,7 +1,7 @@
 ninja.controller('SkillsCtrl', function(Data, $scope) {
     $scope.skills = Data.skills;
 
-    var currentTab = 0;
+    var currentTab = 4;
 
     $scope.getSkill = function getSkill(id) {
         for(var i = 0; i < $scope.skills.length; i++) {

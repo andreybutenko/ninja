@@ -22,6 +22,10 @@
             text-decoration: none;
             color: white;
             line-height: 75px;
+            white-space: nowrap;
+            @media #{$query-medium} {
+                padding: 0 15px;
+            }
         }
 
         .tabs {

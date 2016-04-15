@@ -5,7 +5,7 @@
         </div>
         <div class="skill-container">
             <h1>{{ getCurrentTab().name }}</h1>
-            <div class="skill-view {{ skill.id }}" ng-repeat="(skillIndex, skill) in skills" ui-view="{{ skill.id }}" ng-show="isTabSelected(skillIndex)"></div>
+            <div class="skill-view {{ skill.id }}" ng-class="{ 'skill-view-selected': isTabSelected(skillIndex) }" ng-repeat="(skillIndex, skill) in skills" ui-view="{{ skill.id }}" ng-show="isTabSelected(skillIndex)"></div>
         </div>
     </div>
 </div>
