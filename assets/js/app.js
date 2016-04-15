@@ -6,8 +6,9 @@ ninja.run(function($rootScope) {
     });
 });
 
-ninja.config(function($stateProvider, $urlRouterProvider) {
+ninja.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
 
     $stateProvider
         .state('home', {
@@ -29,12 +30,6 @@ ninja.config(function($stateProvider, $urlRouterProvider) {
                 },
                 'tabs': {
                     templateUrl: '/pages/tabs.html'
-                },
-                'paragraph@detail': {
-                    templateUrl: '/pages/articles/paragraph.html'
-                },
-                'header@detail': {
-                    templateUrl: '/pages/articles/header.html'
                 }
             }
         })
