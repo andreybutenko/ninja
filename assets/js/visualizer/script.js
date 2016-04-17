@@ -21,7 +21,7 @@ var visualizer = {
         connections: 4,
         points: 20
     },
-    wait: 300,
+    wait: 200,
     style: 0,
     init: firstTime,
     update: updateOptions
@@ -217,8 +217,7 @@ function scramble() {
 
 var frames = 0;
 function onFrame(event) {
-    console.log('frame')
-    frames++
+    frames++;
     if((visualizer.opacity < 100) && (!visualizer.fadingOut)) {
         visualizer.opacity++;
     }
@@ -241,7 +240,7 @@ function onFrame(event) {
         visualizer.displayPolys[i].color.g += (visualizer.polys[i].color.g - visualizer.displayPolys[i].color.g) / 30;
         visualizer.displayPolys[i].color.b += (visualizer.polys[i].color.b - visualizer.displayPolys[i].color.b) / 30;
     }
-    if((frames == visualizer.wait) && (!visualizer.fadingOut)) {
+    if((frames >= visualizer.wait) && (!visualizer.fadingOut)) {
         scramble();
     }
 

@@ -7,12 +7,12 @@ ninja.controller('PlayCtrl', function($scope) {
 
     $scope.$watch('points',function(val,old) {
         if($scope.connections > $scope.points) {
-            $scope.connections = $scope.points;
+            $scope.connections = $scope.points - 1;
         }
     });
     $scope.$watch('connections',function(val,old) {
         if($scope.connections > $scope.points) {
-            $scope.connections = $scope.points;
+            $scope.connections = $scope.points - 1;
         }
     });
 

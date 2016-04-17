@@ -20,6 +20,7 @@
                 padding-top: 100px;
                 flex-direction: column;
                 height: auto;
+                text-align: center;
             }
 
             .logo {
@@ -52,7 +53,7 @@
 
             .content {
                 padding-left: 1em;
-                background-color: white;
+                background-color: rgba(255, 255, 255, 0.5);
                 padding-bottom: 5px;
                 border-radius: 5px;
 
@@ -60,7 +61,6 @@
                     width: 100%;
                     flex-basis: auto;
                     padding: 1em;
-                    padding-bottom: 3em;
                 }
 
                 .title {
@@ -88,6 +88,12 @@
                 left: 0;
                 width: 100%;
                 height: calc(100% - 75px);
+                @media #{$query-medium} {
+                    height: calc(100% - 180px);
+                }
+                @media #{$query-small} {
+                    height: calc(100% - 220px);
+                }
             }
         }
     }
