@@ -30,6 +30,9 @@ ninja.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 },
                 'tabs': {
                     templateUrl: '/pages/tabs.html'
+                },
+                'cart@detail': {
+                    templateUrl: '/pages/portfolio/cart.html'
                 }
             }
         })

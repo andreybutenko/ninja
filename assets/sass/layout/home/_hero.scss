@@ -1,63 +1,93 @@
 .home {
     .hero {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: flex-end;
-        height: 75vh;
-        width: 100%;
-
+        position: relative;
         @media #{$query-medium} {
-            padding-top: 100px;
             flex-direction: column;
-            height: auto;
         }
 
-        .logo {
-            margin-right: 1em;
-            min-width: 455px;
-            width: 30%;
-            height: 100%;
-            flex: 0 0 30%;
-            background-image: url('/assets/img/ninja.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            height: 75vh;
+            width: 100%;
+            position: relative;
+            flex: 1 1;
 
             @media #{$query-medium} {
-                min-width: 0;
-                max-width: 480px;
+                padding-top: 100px;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .logo {
+                margin-right: 1em;
+                min-width: 455px;
+                width: 30%;
+                height: 100%;
+                background-image: url('/assets/img/ninja.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+
+                @media #{$query-medium} {
+                    margin: 25px 0;
+                    max-height: 150px;
+                }
+
+                @media #{$query-medium} {
+                    min-width: 0;
+                    max-width: 480px;
+                    width: 100%;
+                    flex-basis: auto;
+                }
+
+                .sizer {
+                    visibility: hidden;
+                    max-width: 100%;
+                }
+            }
+
+            .content {
+                padding-left: 1em;
+                background-color: white;
+                padding-bottom: 5px;
+                border-radius: 5px;
+
+                @media #{$query-medium} {
+                    width: 100%;
+                    flex-basis: auto;
+                    padding: 1em;
+                    padding-bottom: 3em;
+                }
+
+                .title {
+                    font-weight: 200;
+                    font-size: 3em;
+                    @media #{$query-medium} {
+                        font-size: 2em;
+                    }
+                }
+
+                .mission {
+                    font-weight: 200;
+                    font-size: 2em;
+                    color: $accentText;
+                    @media #{$query-medium} {
+                        font-size: 1.5em;
+                    }
+                }
+            }
+
+            #visualizerCanvas {
+                z-index: -1;
+                position: absolute;
+                top: 75px;
+                left: 0;
                 width: 100%;
-                flex-basis: auto;
-            }
-
-            .sizer {
-                visibility: hidden;
-                max-width: 100%;
-            }
-        }
-
-        .content {
-            width: 50%;
-            flex: 0 0 50%;
-            padding-left: 1em;
-
-            @media #{$query-medium} {
-                width: 100%;
-                flex-basis: auto;
-                padding: 1em;
-            }
-
-            .title {
-                font-weight: 200;
-                font-size: 3em;
-            }
-
-            .mission {
-                font-weight: 200;
-                font-size: 2em;
-                color: $accentText;
+                height: calc(100% - 75px);
             }
         }
     }

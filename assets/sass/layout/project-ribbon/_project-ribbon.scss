@@ -60,6 +60,18 @@
             flex: 0 0 200px;
             -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            transition: clip-path 250ms, -webkit-clip-path 250ms;
+            cursor: pointer;
+
+            &:hover {
+                -webkit-clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+                clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+            }
+
+            &:active {
+                -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 98%, 50% 100%, 0 100%, 0 0);
+                clip-path: polygon(50% 0%, 100% 0, 100% 98%, 50% 100%, 0 100%, 0 0);
+            }
         }
 
         .preview {
@@ -128,6 +140,10 @@
                     padding: 0.5em;
                     -webkit-column-break-inside: avoid;
                     float: right;
+                }
+
+                a {
+                    text-decoration: none;
                 }
             }
         }

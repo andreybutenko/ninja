@@ -1,16 +1,15 @@
 ninja.factory('Data', ['$http', function($http) {
     var projects = [
         {
-            id: 'kiosk',
-            title: 'Inglemoor Kiosk',
-            timeframe: 'February 2016',
-            category: 'programming',
-            tags: ['Angular', 'Sass', 'Team IDEA'],
+            id: 'cart',
+            title: 'Laptop Cart',
+            timeframe: 'March 2016',
+            category: 'physical',
+            tags: ['Design', 'Construction', 'CAD', 'Laser Cutting'],
             description: 'One of the responsibilities of Inglemoor High School\'s student government is to communicate with students. The goal of this project is to give them another touch point with students.',
-            icon: '/assets/img/kiosk-icon.png',
-            info: true,
+            icon: '/assets/img/cart-icon.png',
             colors: {
-                background: '#00798c',
+                background: '#5f6465',
                 text: '#ffffff',
                 hex: ''
             }
@@ -23,8 +22,40 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['Design', 'Construction', 'Team IDEA'],
             description: 'To-Go Bowls are wasteful for the world, and inconvenient for the user. This project addressed both those issues.',
             icon: '/assets/img/cup-icon.png',
+            info: true,
             colors: {
                 background: '#628a5c',
+                text: '#ffffff',
+                hex: ''
+            }
+        },
+        {
+            id: 'candydispenser',
+            title: 'Candy Dispenser',
+            timeframe: 'December 2016',
+            category: 'physical',
+            tags: ['Design', 'Construction', 'Team IDEA'],
+            description: 'By using elements of what makes holiday traditions memorable, this toy aims to create memorable holidays for children.',
+            icon: '/assets/img/dispenser-icon.png',
+            info: true,
+            colors: {
+                background: '#dC9c89',
+                text: '#000000',
+                hex: ''
+            }
+        },
+
+        {
+            id: 'kiosk',
+            title: 'Inglemoor Kiosk',
+            timeframe: 'February 2016',
+            category: 'programming',
+            tags: ['Angular', 'Sass', 'Team IDEA'],
+            description: 'One of the responsibilities of Inglemoor High School\'s student government is to communicate with students. The goal of this project is to give them another touch point with students.',
+            icon: '/assets/img/kiosk-icon.png',
+            info: true,
+            colors: {
+                background: '#00798c',
                 text: '#ffffff',
                 hex: ''
             }
@@ -43,21 +74,6 @@ ninja.factory('Data', ['$http', function($http) {
                 text: '#000000',
                 hex: '',
                 factor: -0.05
-            }
-        },
-        {
-            id: 'candydispenser',
-            title: 'Candy Dispenser',
-            timeframe: 'December 2016',
-            category: 'physical',
-            tags: ['Design', 'Construction', 'Team IDEA'],
-            description: 'By using elements of what makes holiday traditions memorable, this toy aims to create memorable holidays for children.',
-            icon: '/assets/img/dispenser-icon.png',
-            info: true,
-            colors: {
-                background: '#dC9c89',
-                text: '#000000',
-                hex: ''
             }
         },
         {
@@ -113,6 +129,7 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['PHP'],
             description: 'A social networking website on this scale was also beyond what I could reasonably achieve at the time, but I was really interested in a project that would test me and ultimately expand my capabilities.',
             icon: '/assets/img/vasn-icon.png',
+            info: true,
             colors: {
                 background: '#000000',
                 text: '#ffffff',

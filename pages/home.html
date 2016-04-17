@@ -1,9 +1,37 @@
 <div class="home" ng-controller="HomeCtrl">
-    <div class="hero">
-        <div class="logo"><img class="sizer" src="/assets/img/ninja.png" /></div>
-        <div class="content">
-            <h1 class="title">Andrey Butenko</h1>
-            <h2 class="mission">I create modern solutions to real-world problems.</h2>
+    <div class="hero play" ng-controller="PlayCtrl">
+        <div class="main">
+            <div class="logo"><img class="sizer" src="/assets/img/ninja.png" /></div>
+            <div class="content">
+                <h1 class="title">Andrey Butenko</h1>
+                <h2 class="mission">I create modern solutions to real-world problems.</h2>
+            </div>
+            <canvas id="visualizerCanvas" resize="true"></canvas>
+        </div>
+        <div class="options" ng-class="{ 'expanded': expanded }">
+            <div class="values-container">
+                <div class="value number">
+                    <label for="play-points">Number of Intersections</label>
+                    <input type="number" min="0" id="play-points" ng-model="points">
+                </div>
+                <div class="value number">
+                    <label for="play-connections">Complexity</label>
+                    <input type="number" min="0" id="play-connections" ng-model="connections">
+                </div>
+                <div class="value number">
+                    <label for="play-wait">Delay between changes</label>
+                    <input type="number" min="10" id="play-wait" ng-model="wait">
+                </div>
+                <div class="value checkbox">
+                    <input type="checkbox" id="play-rawStyle" ng-model="rawStyle">
+                    <label for="play-rawStyle">Alternate Style</label>
+                </div>
+                <a class="btn submit" ng-click="update()">Apply</a>
+            </div>
+        </div>
+
+        <div class="responsive prompt">
+            <a class="btn" ng-click="expanded = !expanded"><span ng-hide="expanded">Click to play with the animation!</span><span ng-show="expanded">Click to minimize menu.</span></a>
         </div>
     </div>
     <div class="feature feature-dark">

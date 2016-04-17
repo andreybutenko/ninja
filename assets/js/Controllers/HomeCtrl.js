@@ -1,4 +1,4 @@
-ninja.controller('HomeCtrl', ['$scope', '$state', 'Data', function($scope, $state, Data) {
+ninja.controller('HomeCtrl', function($scope, $state, $document, $timeout, Data) {
     $scope.entries = Data.projects;
 
     $scope.widgetCluster = {
@@ -6,6 +6,9 @@ ninja.controller('HomeCtrl', ['$scope', '$state', 'Data', function($scope, $stat
         medium: [],
         large: []
     };
+
+    
+    visualizer.init()
 
     var widgets = Data.widgets;
 
@@ -80,4 +83,4 @@ ninja.controller('HomeCtrl', ['$scope', '$state', 'Data', function($scope, $stat
     $scope.darken = darken;
 
     $scope.entries[0].firstLoad = true;
-}]);
+});

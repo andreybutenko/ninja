@@ -7,11 +7,18 @@
 
 @import 'layout/home/category-switcher';
 @import 'layout/home/hero';
+@import 'layout/home/play';
 @import 'layout/home/widgets-responsive';
 @import 'layout/home/widgets';
 
 @import 'layout/misc/links';
 @import 'layout/misc/tabs';
+
+@import 'layout/portfolio-detail/article';
+@import 'layout/portfolio-detail/base';
+@import 'layout/portfolio-detail/gallery';
+@import 'layout/portfolio-detail/header';
+@import 'layout/portfolio-detail/info-block';
 
 @import 'layout/project-ribbon/feature';
 @import 'layout/project-ribbon/project-ribbon';

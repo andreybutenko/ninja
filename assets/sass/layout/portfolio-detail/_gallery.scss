@@ -1,0 +1,40 @@
+.detail {
+    .gallery {
+        width: 100%;
+        height: 600px;
+        max-height: 50vh;
+    }
+
+    .gallery-single {
+
+    }
+
+    .gallery-wide {
+        border-top: 10px solid $darkColor;
+        border-bottom: 10px solid $darkColor;
+    }
+
+    .gallery-labeled {
+        display: flex;
+        justify-content: center;
+
+        .image, p {
+            flex-grow: 1;
+        }
+    }
+
+    .gallery-flex {
+        display: flex;
+
+        .image {
+            flex-grow: 1;
+        }
+    }
+
+    .image {
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
