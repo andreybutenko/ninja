@@ -33,6 +33,24 @@ ninja.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 },
                 'cart@detail': {
                     templateUrl: '/pages/portfolio/cart.html'
+                },
+                'deskorganizer@detail': {
+                    templateUrl: '/pages/portfolio/deskorganizer.html'
+                },
+                'candydispenser@detail': {
+                    templateUrl: '/pages/portfolio/candydispenser.html'
+                },
+                'bowl@detail': {
+                    templateUrl: '/pages/portfolio/bowl.html'
+                },
+                'formalwear@detail': {
+                    templateUrl: '/pages/portfolio/formalwear.html'
+                },
+                'multiplayer@detail': {
+                    templateUrl: '/pages/portfolio/multiplayer.html'
+                },
+                'obstaclecar@detail': {
+                    templateUrl: '/pages/portfolio/obstaclecar.html'
                 }
             }
         })

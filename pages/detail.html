@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-    <div class="info-blocks-container responsive-container">
+    <div class="info-blocks-container responsive-container" style="color: {{ projectDetails.colors.text }}; background-color: {{ darken(projectDetails.colors.background, projectDetails.colors.factor || -0.1) }}">
         <div class="info-blocks responsive">
             <div class="info-block summary">
                 <h2 class="label">Summary</h2>
@@ -21,6 +21,42 @@
             </div>
         </div>
     </div>
+    <div class="construction-flag-container responsive-container" ng-show="projectDetails.constructionFlag">
+        <div class="construction-flag responsive">
+            <div class="icon-container">
+                <i class="fa fa-flag"></i>
+            </div>
+            <p>
+                More info about this project is coming soon!
+                In the meantime, I have <a href="/">more projects you can look at.</a>
+            </p>
+        </div>
+    </div>
     <div class="article" ui-view="{{ projectDetails.id }}">
     </div>
+
+    <div class="responsive-container">
+        <div class="responsive">
+            <div class="slideshow-context">
+                <div class="slideshow-container" ng-controller="SlideshowCtrl" ng-init="setProject(projectDetails.id)" ng-hide="isEmptySlideshow()">
+                    <div class="slideshow-controls">
+                        <div class="next" ng-click="nextSlide()"><i class="fa fa-angle-right"></i></div>
+                        <div class="prev" ng-click="prevSlide()"><i class="fa fa-angle-left"></i></div>
+                    </div>
+                    <div class="slides">
+                        <div class="slide" ng-repeat="(slideIndex, slide) in getSkill(projectDetails.id).slides" style="background-image: url('{{ slide.url }}')" ng-style="$first && { 'margin-left': marginLeft }">
+                            <div class="slide-caption">{{ getCaption(slideIndex) }}</div>
+                        </div>
+                    </div>
+                    <div class="slides-overview">
+                        <div class="slide-container" ng-repeat="(slideIndex, slide) in getSkill(projectDetails.id).slides" ng-class="{ 'current': (slideIndex == currSlide) }" ng-click="changeSlide(slideIndex)">
+                            <div class="slide" style="background-image: url('{{ slide.url }}')"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
 </div>

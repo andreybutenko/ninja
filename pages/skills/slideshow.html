@@ -4,12 +4,12 @@
         <div class="prev" ng-click="prevSlide()"><i class="fa fa-angle-left"></i></div>
     </div>
     <div class="slides">
-        <div class="slide" ng-repeat="(slideIndex, slide) in getSkill(skill.id).data" style="background-image: url('{{ slide.url }}')" ng-style="$first && { 'margin-left': marginLeft }">
+        <div class="slide" ng-repeat="(slideIndex, slide) in getSkill(skill.id).slides" style="background-image: url('{{ slide.url }}')" ng-style="$first && { 'margin-left': marginLeft }">
             <div class="slide-caption">{{ getCaption(slideIndex) }}</div>
         </div>
     </div>
     <div class="slides-overview">
-        <div class="slide-container" ng-repeat="(slideIndex, slide) in getSkill(skill.id).data" ng-class="{ 'current': (slideIndex == currSlide) }" ng-click="changeSlide(slideIndex)">
+        <div class="slide-container" ng-repeat="(slideIndex, slide) in getSkill(skill.id).slides" ng-class="{ 'current': (slideIndex == currSlide) }" ng-click="changeSlide(slideIndex)">
             <div class="slide" style="background-image: url('{{ slide.url }}')"></div>
         </div>
     </div>

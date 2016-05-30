@@ -767,19 +767,102 @@ a.btn {
   flex-direction: column;
 }
 
+.detail ul li {
+  line-height: 1.5em;
+}
+
 .detail p {
   line-height: 1.5em;
+  margin-top: 0;
+}
+
+.detail h1 {
+  font-weight: 400;
+}
+
+.detail .no-top-margin {
+  margin-top: 0;
+}
+
+.detail .no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.detail .slideshow-context {
+  width: 100%;
+}
+
+.detail .spacer {
+  height: 400px;
+}
+
+.construction-flag-container {
+  margin-top: 1em;
+}
+
+.construction-flag-container .construction-flag {
+  background-color: #333;
+  padding: 2em 2em;
+  width: 500px;
+  min-width: 100%;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white;
+}
+
+.construction-flag-container .construction-flag a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px dotted white;
+}
+
+.construction-flag-container .construction-flag a:hover {
+  border-bottom-style: solid;
+}
+
+.construction-flag-container .construction-flag .icon-container {
+  background-color: white;
+  color: #333;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 0.5em;
 }
 
 .detail .gallery {
   width: 100%;
   height: 600px;
   max-height: 50vh;
+  margin-bottom: 16px;
 }
 
 .detail .gallery-wide {
-  border-top: 10px solid #333;
-  border-bottom: 10px solid #333;
+  padding: 10px 0;
+  border-top: 10px dotted #ccc;
+  border-bottom: 10px dotted #ccc;
 }
 
 .detail .gallery-labeled {
@@ -855,6 +938,7 @@ a.btn {
   flex: 0 0 200px;
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-size: cover;
 }
 
 .detail .info-blocks-container .info-blocks {
@@ -869,10 +953,8 @@ a.btn {
 }
 
 .detail .info-blocks-container .info-blocks .info-block {
-  background-color: white;
   margin: 10px;
   padding: 10px 20px;
-  box-shadow: 0px 10px 18px 5px rgba(0,0,0,0.57);
 }
 
 .detail .info-blocks-container .info-blocks .info-block h2.label {
@@ -1497,20 +1579,20 @@ a.btn {
   text-align: right;
 }
 
-.skills-container .slideshow-container {
+.slideshow-container {
   height: 600px;
   max-height: 50vh;
   position: relative;
 }
 
-.skills-container .slideshow-container .slideshow-controls {
+.slideshow-container .slideshow-controls {
   position: absolute;
   height: 100%;
   width: 100%;
 }
 
-.skills-container .slideshow-container .slideshow-controls .next,
-.skills-container .slideshow-container .slideshow-controls .prev {
+.slideshow-container .slideshow-controls .next,
+.slideshow-container .slideshow-controls .prev {
   position: absolute;
   height: 100%;
   width: 50%;
@@ -1518,19 +1600,19 @@ a.btn {
   cursor: pointer;
 }
 
-.skills-container .slideshow-container .slideshow-controls .prev i.fa {
+.slideshow-container .slideshow-controls .prev i.fa {
   left: 5px;
 }
 
-.skills-container .slideshow-container .slideshow-controls .next {
+.slideshow-container .slideshow-controls .next {
   right: 0;
 }
 
-.skills-container .slideshow-container .slideshow-controls .next i.fa {
+.slideshow-container .slideshow-controls .next i.fa {
   right: 5px;
 }
 
-.skills-container .slideshow-container .slideshow-controls i.fa {
+.slideshow-container .slideshow-controls i.fa {
   position: absolute;
   top: -webkit-calc(50% - 25px);
   top: calc(50% - 25px);
@@ -1544,14 +1626,14 @@ a.btn {
   border-radius: 25px;
 }
 
-.skills-container .slideshow-container .slides {
+.slideshow-container .slides {
   width: 100%;
   height: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.skills-container .slideshow-container .slides .slide {
+.slideshow-container .slides .slide {
   width: 100%;
   height: 100%;
   display: inline-block;
@@ -1564,7 +1646,7 @@ a.btn {
   position: relative;
 }
 
-.skills-container .slideshow-container .slides .slide .slide-caption {
+.slideshow-container .slides .slide .slide-caption {
   position: absolute;
   left: 0;
   right: 0;
@@ -1577,7 +1659,7 @@ a.btn {
   text-align: center;
 }
 
-.skills-container .slideshow-container .slides-overview {
+.slideshow-container .slides-overview {
   width: 100%;
   height: 100px;
   display: -webkit-box;
@@ -1587,7 +1669,7 @@ a.btn {
   overflow: hidden;
 }
 
-.skills-container .slideshow-container .slides-overview .slide-container {
+.slideshow-container .slides-overview .slide-container {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex: 1;
@@ -1597,7 +1679,7 @@ a.btn {
   cursor: pointer;
 }
 
-.skills-container .slideshow-container .slides-overview .slide-container .slide {
+.slideshow-container .slides-overview .slide-container .slide {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1611,7 +1693,7 @@ a.btn {
   transition: all 250ms;
 }
 
-.skills-container .slideshow-container .slides-overview .slide-container.current .slide {
+.slideshow-container .slides-overview .slide-container.current .slide {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
   -webkit-transform: scale(1);

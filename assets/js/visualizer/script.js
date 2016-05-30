@@ -89,7 +89,7 @@ function setRange() {
         visualizer.range.y.max = 1 * visualizer.height;
     }
     else {
-        visualizer.range.x.min = 0.7 * visualizer.width;
+        visualizer.range.x.min = 0.3 * visualizer.width;
         visualizer.range.y.min = 0 * visualizer.height;
         visualizer.range.x.max = 1 * visualizer.width;
         visualizer.range.y.max = 1 * visualizer.height;

@@ -1,5 +1,29 @@
 .detail {
+    ul li {
+        line-height: 1.5em;
+    }
+
     p {
         line-height: 1.5em;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-weight: 400;
+    }
+
+    .no-top-margin {
+        margin-top: 0;
+    }
+    .no-bottom-margin {
+        margin-bottom: 0;
+    }
+
+    .slideshow-context {
+        width: 100%;
+    }
+
+    .spacer {
+        height: 400px;
     }
 }

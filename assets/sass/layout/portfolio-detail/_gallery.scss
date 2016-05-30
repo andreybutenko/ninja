@@ -3,6 +3,7 @@
         width: 100%;
         height: 600px;
         max-height: 50vh;
+        margin-bottom: 16px;
     }
 
     .gallery-single {
@@ -10,8 +11,9 @@
     }
 
     .gallery-wide {
-        border-top: 10px solid $darkColor;
-        border-bottom: 10px solid $darkColor;
+        padding: 10px 0;
+        border-top: 10px dotted #ccc;
+        border-bottom: 10px dotted #ccc;
     }
 
     .gallery-labeled {

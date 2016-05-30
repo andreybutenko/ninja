@@ -8,7 +8,7 @@
             <p class="description">{{ project.description }}</p>
             <div class="footer">
                 <span ng-repeat="tag in project.tags"><span class="tag ribbon-tag">{{ tag }}</span> </span>
-                <a ui-sref="^.detail({ project: '{{ project.id }}' })" class="info ribbon-button" style="color: {{ project.colors.background }}; background-color: {{ project.colors.text }}"><span ng-show="project.info">Details coming soon.</span><span ng-hide="project.info">More info</span></a>
+                <a ui-sref="^.detail({ project: '{{ project.id }}' })" class="info ribbon-button" style="color: {{ project.colors.background }}; background-color: {{ project.colors.text }}"><span ng-show="project.constructionButton">Details coming soon.</span><span ng-hide="project.constructionButton">More info</span></a>
             </div>
         </div>
     </div>

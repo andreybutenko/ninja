@@ -1,109 +1,107 @@
-.skills-container {
-    .slideshow-container {
-        height: 600px;
-        max-height: 50vh;
-        position: relative;
+.slideshow-container {
+    height: 600px;
+    max-height: 50vh;
+    position: relative;
 
-        .slideshow-controls {
+    .slideshow-controls {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+
+        .next, .prev {
             position: absolute;
             height: 100%;
-            width: 100%;
+            width: 50%;
+            z-index: 999;
+            cursor: pointer;
+        }
 
-            .next, .prev {
-                position: absolute;
-                height: 100%;
-                width: 50%;
-                z-index: 999;
-                cursor: pointer;
-            }
-
-            .prev {
-                i.fa {
-                    left: 5px;
-                }
-            }
-
-            .next {
-                right: 0;
-                i.fa {
-                    right: 5px;
-                }
-            }
-
+        .prev {
             i.fa {
-                position: absolute;
-                top: calc(50% - 25px);
-                height: 50px;
-                width: 50px;
-                font-size: 40px;
-                line-height: 50px;
-
-                background-color: rgba(0, 0, 0, 0.6);
-                color: white;
-                text-align: center;
-                border-radius: 25px;
+                left: 5px;
             }
         }
 
-        .slides {
+        .next {
+            right: 0;
+            i.fa {
+                right: 5px;
+            }
+        }
+
+        i.fa {
+            position: absolute;
+            top: calc(50% - 25px);
+            height: 50px;
+            width: 50px;
+            font-size: 40px;
+            line-height: 50px;
+
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            border-radius: 25px;
+        }
+    }
+
+    .slides {
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+
+        .slide {
             width: 100%;
             height: 100%;
-            white-space: nowrap;
-            overflow: hidden;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-color: $darkColor;
+            transition: margin-left ease-in-out 750ms;
+            position: relative;
+
+            .slide-caption {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: white;
+                padding: 5px;
+                line-height: 1.5em;
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    }
+
+    .slides-overview {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        overflow: hidden;
+
+        .slide-container {
+            flex-grow: 1;
+            height: 100%;
+            background-color: black;
+            cursor: pointer;
 
             .slide {
-                width: 100%;
-                height: 100%;
-                display: inline-block;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
-                background-color: $darkColor;
-                transition: margin-left ease-in-out 750ms;
-                position: relative;
-
-                .slide-caption {
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: rgba(0, 0, 0, 0.4);
-                    color: white;
-                    padding: 5px;
-                    line-height: 1.5em;
-                    font-size: 16px;
-                    text-align: center;
-                }
-            }
-        }
-
-        .slides-overview {
-            width: 100%;
-            height: 100px;
-            display: flex;
-            overflow: hidden;
-
-            .slide-container {
-                flex-grow: 1;
+                filter: grayscale(100%);
+                transform: scale(0.7);
                 height: 100%;
-                background-color: black;
-                cursor: pointer;
+                transition: all 250ms;
+            }
 
+            &.current {
                 .slide {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: contain;
-                    filter: grayscale(100%);
-                    transform: scale(0.7);
-                    height: 100%;
-                    transition: all 250ms;
-                }
-
-                &.current {
-                    .slide {
-                        filter: grayscale(0%);
-                        transform: scale(1);
-                    }
+                    filter: grayscale(0%);
+                    transform: scale(1);
                 }
             }
         }

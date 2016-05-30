@@ -5,9 +5,11 @@ ninja.factory('Data', ['$http', function($http) {
             title: 'Laptop Cart',
             timeframe: 'March 2016',
             category: 'physical',
-            tags: ['Design', 'Construction', 'CAD', 'Laser Cutting'],
+            tags: ['Design', 'Construction', 'CAD', 'Laser Cutting', 'Team IDEA'],
             description: 'One of the responsibilities of Inglemoor High School\'s student government is to communicate with students. The goal of this project is to give them another touch point with students.',
             icon: '/assets/img/cart-icon.png',
+            constructionFlag: false,
+            constructionButton: false,
             colors: {
                 background: '#5f6465',
                 text: '#ffffff',
@@ -22,27 +24,83 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['Design', 'Construction', 'Team IDEA'],
             description: 'To-Go Bowls are wasteful for the world, and inconvenient for the user. This project addressed both those issues.',
             icon: '/assets/img/cup-icon.png',
-            info: true,
+            constructionFlag: false,
+            constructionButton: false,
             colors: {
                 background: '#628a5c',
                 text: '#ffffff',
                 hex: ''
-            }
+            },
+            slides: [
+                {
+                    title: 'Several generations of bowl prototypes',
+                    url: '/assets/img/portfolio/bowl/bowl-iteration.jpg'
+                },
+                {
+                    title: 'Final prototype',
+                    url: '/assets/img/portfolio/bowl/bowl-final.jpg'
+                },
+            ]
         },
         {
             id: 'candydispenser',
             title: 'Candy Dispenser',
-            timeframe: 'December 2016',
+            timeframe: 'December 2015',
             category: 'physical',
             tags: ['Design', 'Construction', 'Team IDEA'],
             description: 'By using elements of what makes holiday traditions memorable, this toy aims to create memorable holidays for children.',
             icon: '/assets/img/dispenser-icon.png',
-            info: true,
+            constructionFlag: false,
+            constructionButton: false,
             colors: {
                 background: '#dC9c89',
                 text: '#000000',
                 hex: ''
-            }
+            },
+            slides: [
+                {
+                    title: 'The toy',
+                    url: '/assets/img/portfolio/candydispenser/toymodel.jpg'
+                },
+                {
+                    title: 'Toy on its stand',
+                    url: '/assets/img/portfolio/candydispenser/fullmodel.jpg'
+                },
+                {
+                    title: 'Dispenser prototype; front',
+                    url: '/assets/img/portfolio/candydispenser/dispenser-front.jpg'
+                },
+                {
+                    title: 'Dispenser prototype; side',
+                    url: '/assets/img/portfolio/candydispenser/dispenser-side.jpg'
+                }
+            ]
+        },
+        {
+            id: 'deskorganizer',
+            title: 'Desk Organizer',
+            timeframe: 'October 2015',
+            category: 'physical',
+            tags: ['Design', 'Construction', 'Team IDEA'],
+            description: 'A desk organizer for the unique needs of the Design Technology classroom.',
+            icon: '/assets/img/organizer-icon.png',
+            constructionFlag: false,
+            constructionButton: false,
+            colors: {
+                background: '#e4d895',
+                text: '#000000',
+                hex: ''
+            },
+            slides: [
+                {
+                    title: 'Desk Organizer; front view',
+                    url: '/assets/img/portfolio/organizer/deskorganizer.jpg'
+                },
+                {
+                    title: 'Desk Organizer; side view',
+                    url: '/assets/img/portfolio/organizer/deskorganizer-2.jpg'
+                }
+            ]
         },
 
         {
@@ -53,7 +111,8 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['Angular', 'Sass', 'Team IDEA'],
             description: 'One of the responsibilities of Inglemoor High School\'s student government is to communicate with students. The goal of this project is to give them another touch point with students.',
             icon: '/assets/img/kiosk-icon.png',
-            info: true,
+            constructionFlag: true,
+            constructionButton: true,
             colors: {
                 background: '#00798c',
                 text: '#ffffff',
@@ -68,13 +127,52 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['Nodejs', 'Mongodb', 'Ionic', 'Angular', 'Sass', 'Competition'],
             description: 'An app for students in organizations like FBLA and DECA to get feedback on their formal attire. When preparing for competition, it\'s easy to forget about clothes - an important element of a presentation! Formal Wear helps users get actionable feedback from others.',
             icon: '/assets/img/formalwear-icon.png',
-            info: true,
+            constructionFlag: false,
+            constructionButton: false,
             colors: {
                 background: '#ffffff',
                 text: '#000000',
                 hex: '',
                 factor: -0.05
-            }
+            },
+            slides: [
+                {
+                    title: 'Splash screen',
+                    url: '/assets/img/portfolio/formalwear/splash.png'
+                },
+                {
+                    title: 'Feed',
+                    url: '/assets/img/portfolio/formalwear/feed.png'
+                },
+                {
+                    title: 'Explore',
+                    url: '/assets/img/portfolio/formalwear/explore.png'
+                },
+                {
+                    title: 'Fashion tips',
+                    url: '/assets/img/portfolio/formalwear/tips.png'
+                },
+                {
+                    title: 'Notifications',
+                    url: '/assets/img/portfolio/formalwear/notifications.png'
+                },
+                {
+                    title: 'Profile',
+                    url: '/assets/img/portfolio/formalwear/profile.png'
+                },
+                {
+                    title: 'Profile Edit',
+                    url: '/assets/img/portfolio/formalwear/clubs.png'
+                },
+                {
+                    title: 'Question writing',
+                    url: '/assets/img/portfolio/formalwear/questions.png'
+                },
+                {
+                    title: 'Question responses',
+                    url: '/assets/img/portfolio/formalwear/responses.png'
+                },
+            ]
         },
         {
             id: 'multiplayer',
@@ -84,7 +182,8 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['Nodejs', 'Unity', 'C#', 'Networking', 'Modelling'],
             description: 'An exploration of multiplayer. Before this project, I hadn\'t done much work with Unity - the game engine powering the client - real-time networking, or terrain generation. This project was an interesting exploration of all of these topics!',
             icon: '/assets/img/mmo-icon.png',
-            info: true,
+            constructionFlag: true,
+            constructionButton: false,
             colors: {
                 background: '#2c3e50',
                 text: '#ecf0f1',
@@ -99,7 +198,8 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['Arduino', 'C++', 'Robotics'],
             description: 'This project was an interesting one, as it was the first time I\'d worked with robotics. The physical difficulties of construction and organization came up, as did the limitations of hardware accuracy. The end result is something I am pretty pleased with.',
             icon: '/assets/img/car-icon.png',
-            info: true,
+            constructionFlag: true,
+            constructionButton: false,
             colors: {
                 background: '#a46b49',
                 text: '#ffffff',
@@ -114,7 +214,8 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['PHP', 'Networking'],
             description: 'While a project like this was beyond my skill level at the time, I still persevered in creating a very hackish working prototype of an online instant messenger.',
             icon: '',
-            info: true,
+            constructionFlag: true,
+            constructionButton: true,
             colors: {
                 background: '#81cfe0',
                 text: '#1d2f33',
@@ -129,7 +230,8 @@ ninja.factory('Data', ['$http', function($http) {
             tags: ['PHP'],
             description: 'A social networking website on this scale was also beyond what I could reasonably achieve at the time, but I was really interested in a project that would test me and ultimately expand my capabilities.',
             icon: '/assets/img/vasn-icon.png',
-            info: true,
+            constructionFlag: true,
+            constructionButton: true,
             colors: {
                 background: '#000000',
                 text: '#ffffff',
@@ -277,7 +379,7 @@ ninja.factory('Data', ['$http', function($http) {
         {
             name: 'Sketching',
             id: 'sketching',
-            data: [
+            slides: [
                 {
                     title: 'Garlic Press',
                     url: '/assets/img/skills/sketches/garlic press.jpg'
@@ -303,7 +405,7 @@ ninja.factory('Data', ['$http', function($http) {
         {
             name: 'CAD',
             id: 'cad',
-            data: [
+            slides: [
                 {
                     title: 'Laptop Cart; back view',
                     url: '/assets/img/skills/cartcad-back.png'
@@ -317,7 +419,7 @@ ninja.factory('Data', ['$http', function($http) {
         {
             name: 'Photo Editing',
             id: 'editing',
-            data: [
+            slides: [
                 {
                     title: 'Mechanical Pencil Knight',
                     url: '/assets/img/skills/editing/knight.png'
@@ -347,7 +449,7 @@ ninja.factory('Data', ['$http', function($http) {
         {
             name: 'Model Making',
             id: 'model',
-            data: [
+            slides: [
                 {
                     title: 'Desk Organizer',
                     url: '/assets/img/skills/deskorganizer-2.jpg'

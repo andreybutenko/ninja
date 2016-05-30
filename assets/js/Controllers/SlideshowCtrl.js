@@ -4,23 +4,51 @@ ninja.controller('SlideshowCtrl', function($scope, $window, $document, $interval
     var skillName;
     var slideCount;
     $scope.marginLeft;
+    var isProject = false;
 
     $scope.setSkill = function setSkill(id) {
         skillName = id;
-        slideCount = getSkill(skillName).data.length
+        if(!getSkill(skillName).hasOwnProperty('slides')) {
+            slideCount = 0;
+            return;
+        }
+        slideCount = getSkill(skillName).slides.length;
         startTicker();
         changeSlide(slide);
     }
 
+    $scope.setProject = function setProject(id) {
+        isProject = true;
+        $scope.setSkill(id);
+    }
+
+    $scope.isEmptySlideshow = function isEmptySlideshow() {
+        return slideCount == 0;
+    }
+
     function getSkill(id) {
-        for(var i = 0; i < Data.skills.length; i++) {
-            if(Data.skills[i].id == id) {
-                return Data.skills[i];
+        if(isProject) {
+            for(var i = 0; i < Data.projects.length; i++) {
+                if(Data.projects[i].id == id) {
+                    return Data.projects[i];
+                }
+            }
+        }
+        else {
+            for(var i = 0; i < Data.skills.length; i++) {
+                if(Data.skills[i].id == id) {
+                    return Data.skills[i];
+                }
             }
         }
     }
+    $scope.getSkill = getSkill;
     $scope.getCaption = function getCaption(i) {
-        return getSkill(skillName).data[i].title;
+        return getSkill(skillName).slides[i].title;
+    }
+
+    $scope.asdf = function asdf() {
+        return { asdf: ['asdf'] }
     }
 
     $interval(function() {
