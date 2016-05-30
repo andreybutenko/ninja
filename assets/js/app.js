@@ -1,8 +1,18 @@
 var ninja = angular.module('ninja', ['ui.router', 'ngAnimate', 'ngSanitize']);
 
 ninja.run(function($rootScope) {
-    $rootScope.$on('$stateChangeSuccess', function() {
+    var titleTail = ' - Andrey Butenko'
+    $rootScope.title = 'Andrey Butenko';
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
        document.body.scrollTop = document.documentElement.scrollTop = 0;
+       console.log(event, toState, toParams);
+
+       if(toState.name == 'detail') {
+           $rootScope.title = (toState.views[toParams.project + '@detail'].title || toState.title) + titleTail;
+       }
+       else {
+           $rootScope.title = toState.title + titleTail;
+       }
     });
 });
 
@@ -13,9 +23,11 @@ ninja.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
             url: '/',
+            title: 'Portfolio',
             views: {
                 'main': {
-                    templateUrl: '/pages/home.html'
+                    templateUrl: '/pages/home.html',
+                    title: 'Home'
                 },
                 'tabs': {
                     templateUrl: '/pages/tabs.html'
@@ -24,6 +36,7 @@ ninja.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('detail', {
             url: '/detail/:project',
+            title: 'Projects',
             views: {
                 'main': {
                     templateUrl: '/pages/detail.html'
@@ -32,30 +45,47 @@ ninja.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     templateUrl: '/pages/tabs.html'
                 },
                 'cart@detail': {
+                    title: 'Laptop Cart',
                     templateUrl: '/pages/portfolio/cart.html'
                 },
                 'deskorganizer@detail': {
+                    title: 'Desk Organizer',
                     templateUrl: '/pages/portfolio/deskorganizer.html'
                 },
                 'candydispenser@detail': {
+                    title: 'Candy Dispenser',
                     templateUrl: '/pages/portfolio/candydispenser.html'
                 },
                 'bowl@detail': {
+                    title: 'To-Go Bowl',
                     templateUrl: '/pages/portfolio/bowl.html'
                 },
                 'formalwear@detail': {
+                    title: 'Formal Wear',
                     templateUrl: '/pages/portfolio/formalwear.html'
                 },
                 'multiplayer@detail': {
+                    title: 'Multiplayer Demo',
                     templateUrl: '/pages/portfolio/multiplayer.html'
                 },
                 'obstaclecar@detail': {
+                    title: 'Obstacle-Avoiding Car',
                     templateUrl: '/pages/portfolio/obstaclecar.html'
-                }
+                },
+                'kiosk@detail': {
+                    title: 'Kiosk'
+                },
+                'messenger@detail': {
+                    title: 'Messenger'
+                },
+                'vasn@detail': {
+                    title: 'VASN'
+                },
             }
         })
         .state('skills', {
             url: '/skills',
+            title: 'Skills',
             views: {
                 'main': {
                     templateUrl: '/pages/skills.html'
