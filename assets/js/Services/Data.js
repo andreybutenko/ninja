@@ -14,7 +14,57 @@ ninja.factory('Data', ['$http', function($http) {
                 background: '#5f6465',
                 text: '#ffffff',
                 hex: ''
-            }
+            },
+            slides: [
+                {
+                    title: 'CAD Cart; Exterior',
+                    url: '/assets/img/portfolio/cart/backside.PNG'
+                },
+                {
+                    title: 'CAD Cart; Internal cable management',
+                    url: '/assets/img/portfolio/cart/camblemanagemetn.PNG'
+                },
+                {
+                    title: 'CAD Cart; Internal laptop storage',
+                    url: '/assets/img/portfolio/cart/exposed topish.PNG'
+                },
+                {
+                    title: 'CAD Cart; Wheels',
+                    url: '/assets/img/portfolio/cart/moarweheels.PNG'
+                },
+                {
+                    title: 'Students using the cart',
+                    url: '/assets/img/portfolio/cart/IMG_20160329_075351.jpg'
+                },
+                {
+                    title: 'Cart in the classroom',
+                    url: '/assets/img/portfolio/cart/IMG_20160324_114311.jpg'
+                },
+                {
+                    title: 'Cart filled with laptops',
+                    url: '/assets/img/portfolio/cart/IMG_20160324_114323.jpg'
+                },
+                {
+                    title: 'Charging method',
+                    url: '/assets/img/portfolio/cart/IMG_20160324_090309.jpg'
+                },
+                {
+                    title: 'Diagram of laptop storage adjustability',
+                    url: '/assets/img/portfolio/cart/diagram.jpg'
+                },
+                {
+                    title: 'CAD Model; charging slots',
+                    url: '/assets/img/portfolio/cart/outlet organizers.jpg'
+                },
+                {
+                    title: 'Technical drawing for charging slots',
+                    url: '/assets/img/portfolio/cart/charger.jpg'
+                },
+                {
+                    title: 'Technical drawing for exterior',
+                    url: '/assets/img/portfolio/cart/exterior.jpg'
+                },
+            ]
         },
         {
             id: 'bowl',

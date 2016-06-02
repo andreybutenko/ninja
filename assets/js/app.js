@@ -5,14 +5,6 @@ ninja.run(function($rootScope) {
     $rootScope.title = 'Andrey Butenko';
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
        document.body.scrollTop = document.documentElement.scrollTop = 0;
-       console.log(event, toState, toParams);
-
-       if(toState.name == 'detail') {
-           $rootScope.title = (toState.views[toParams.project + '@detail'].title || toState.title) + titleTail;
-       }
-       else {
-           $rootScope.title = toState.title + titleTail;
-       }
     });
 });
 

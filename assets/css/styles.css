@@ -877,7 +877,8 @@ a.btn {
 }
 
 .detail .gallery-labeled .image,
-.detail .gallery-labeled p {
+.detail .gallery-labeled p,
+.detail .gallery-labeled div {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex: 1;
