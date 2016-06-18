@@ -1,0 +1,6 @@
+{{> pre-head}}
+{{> post-head}}
+
+{{ content }}
+
+{{> foot}}
