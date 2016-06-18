@@ -27,7 +27,7 @@ ninja.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
         })
         .state('detail', {
-            url: '/detail/:project',
+            url: '/portfolio/:project',
             title: 'Projects',
             views: {
                 'main': {

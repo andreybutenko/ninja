@@ -5,16 +5,24 @@ ninja.directive('dynamicTitle', ['$rootScope', '$timeout',
         return {
             link: function(scope, element) {
                 var listener = function(event, toState, toParams) {
+                    var titleBody;
                     if(toState.name == 'detail') {
-                        title = (toState.views[toParams.project + '@detail'].title || toState.title) + titleTail;
+                        titleBody = toState.views[toParams.project + '@detail'].title || toState.title;
                     }
                     else {
-                        title = toState.title + titleTail;
+                        titleBody = toState.title;
                     }
 
-                    $timeout(function() {
-                        element.text(title);
-                    }, 0, false);
+                    if(typeof titleBody == 'undefined') {
+                        return;
+                    }
+                    else {
+                        title = titleBody + titleTail;
+                        
+                        $timeout(function() {
+                            element.text(title);
+                        }, 0, false);
+                    }
                 };
 
                 $rootScope.$on('$stateChangeSuccess', listener);
