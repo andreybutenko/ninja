@@ -1,0 +1,65 @@
+<div class="cover">
+    <canvas id="visualizerCanvas" resize="true" style="-webkit-user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+</div>
+<div class="profile-img"></div>
+
+<h1>Andrey Butenko</h1>
+
+<section class="facts-section">
+    <% for(key in site.data.facts) {
+        var icon = key;
+        var fact = site.data.facts[key];
+    %>
+        <div class="fact-container">
+            <div class="fact">
+                <i class="fa fa-<%- icon %> fa-fw" aria-hidden="true"></i>
+                <span><%- fact %></span>
+            </div>
+        </div>
+    <% } %>
+</section>
+
+<article class="portfolio-section section-mission">
+    <header class="portfolio-section-header">
+        <h2>Mission</h2>
+    </header>
+    <section class="portfolio-section-content readable">
+        <p>I am a high school student and a full-stack web developer exploring business, design, engineering, music, and programming to have diverse knowledge in many topic areas. I look for opportunities to make a real impact and solve real-world problems.</p>
+        <p>When working on a project, I use empathy, utilize code, and employ knowledge:</p>
+        <ul>
+            <li>The only way to truly address a problem is through <b>empathy</b>. You have to know who you're designing for, and understand their unique challenges.</li>
+            <li>I like to work with <b>code</b>. My specialty is the web, and I have experience in both front-end and back-end development.</li>
+            <li>Having <b>knowledge</b> of multiple disciplines is important to effective, creative solutions. I am exploring a wide range of subjects, including business, music, design, engineering, and programming.</li>
+        </ul>
+    </section>
+</article>
+
+<article class="portfolio-section section-experience">
+    <header class="portfolio-section-header">
+        <h2>Experience</h2>
+    </header>
+    <section class="portfolio-section-content">
+        <%- partial('_section/experience') %>
+        <a class="experience-more btn-flat">See More</a>
+    </section>
+</article>
+
+<article class="portfolio-section section-involvement">
+    <header class="portfolio-section-header">
+        <h2>Involvement</h2>
+    </header>
+    <section class="portfolio-section-content">
+        <%- partial('_section/involvement') %>
+    </section>
+</article>
+
+<article class="portfolio-section section-recent">
+    <header class="portfolio-section-header">
+        <h2>Recent Projects</h2>
+    </header>
+    <section class="portfolio-section-content">
+        <% page.posts.each(function(post){ %>
+          <%- partial('_partials/post-preview', {post: post, index: true}) %>
+        <% }) %>
+    </section>
+</article>

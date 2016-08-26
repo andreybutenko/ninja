@@ -1,0 +1,40 @@
+<%
+    var sortedTags = [];
+    var dir = {};
+
+    site.categories.findOne({ name: 'Experience' }).posts.each(function(post) {
+        post.tags.forEach(function(tagObj) {
+            var tag = tagObj.name;
+            if(typeof dir[tag] == 'undefined')
+                dir[tag] = 1;
+            else
+                dir[tag]++;
+        });
+    });
+
+    for (var tag in dir) {
+        sortedTags.push([tag, dir[tag]])
+    }
+
+    sortedTags.sort(
+        function(a, b) {
+            return b[1] - a[1];
+        }
+    );
+
+    for(var i = 0; i < sortedTags.length; i++) {
+        var tag = sortedTags[i][0]; %>
+        <section>
+            <header class="tag-header">
+                <h3><%- tag %></h3>
+                <span><%- dir[tag] %> project<%- dir[tag] > 1 ? "s" : "" %></span>
+                <a class="experience-expand experience-toggle btn-flat">Expand</a>
+                <a class="experience-shrink experience-toggle btn-flat">Shrink</a>
+            </header>
+            <div class="tag-content">
+                <% site.tags.findOne({ name: tag }).posts.sort('date', -1).each(function(post) { %>
+                    <%- partial('_partials/post-experience', {post: post, index: true}) %>
+                <% }) %>
+            </div>
+        </section>
+    <% } %>

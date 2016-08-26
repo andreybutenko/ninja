@@ -1,0 +1,50 @@
+article.post:not(.post--experience) {
+    margin-bottom: 2 * $big-margin;
+
+    header  {
+        .post-title {
+            color: #000000;
+            font-size: 1.5em;
+        }
+
+        time {
+            color: #6b6b6b;
+            text-transform: uppercase;
+        }
+    }
+
+    section.post-content {
+        margin: $standard-margin 0;
+    }
+
+    .post-footer {
+        width: 100%;
+        ul.post-tag-list {
+            display: inline-block;
+            list-style: none;
+
+            li {
+                display: inline-block;
+                background-color: #4aa3df;
+                color: white;
+                font-size: 0.8em;
+                padding: 0.5em;
+                margin-right: 0.5em;
+                margin-bottom: 0.5em;
+
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        a.read-more {
+            display: inline-block;
+            font-size: 0.8em;
+            padding: 0.5em;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            float: right;
+        }
+    }
+}

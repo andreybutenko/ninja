@@ -1,0 +1,19 @@
+.readable {
+    p {
+        font-size: 16px;
+        line-height: 1.5em;
+        margin-top: 0.5em;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    ul {
+        margin-left: 1.5em;
+
+        li {
+            margin-top: 0.5em;            
+        }
+    }
+}

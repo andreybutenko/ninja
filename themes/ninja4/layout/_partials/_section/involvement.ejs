@@ -1,0 +1,24 @@
+<% site.data['involvement/index'].index.forEach(function(activityName) {
+    var activity = site.data['involvement/' + activityName]; %>
+        <article>
+            <header>
+                <h3><%- activity.title %></h3>
+                <div class="sub-line">
+                    <% if(activity.subtitle != null) { %>
+                        <span class="subtitle"><%- activity.subtitle %></span> &middot;
+                    <% } %>
+                    <span class="timeframe"><%- activity.timeframe %></span>
+                </div>
+            </header>
+            <section>
+                <p><%- activity.description %></p>
+                <% if(typeof activity.achievements != 'undefined' && activity.achievements != null) { %>
+                    <ul>
+                        <% activity.achievements.forEach(function(achievement) { %>
+                            <li><%- achievement %></li>
+                        <% }); %>
+                    </ul>
+                <% } %>
+            </section>
+        </article>
+<% }); %>

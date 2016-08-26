@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<%- partial('_partials/head') %>
+<body>
+  <%- partial('_partials/page-header', null, {cache: !config.relative_link}) %>
+  <%- body %>
+  <%- partial('_partials/page-footer', null, {cache: !config.relative_link}) %>
+  <%- partial('_partials/scripts') %>
+</body>
+</html>

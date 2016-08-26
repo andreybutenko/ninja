@@ -1,0 +1,15 @@
+<a href="<%- url_for(post.path) %>" style="color: <%= post.text %>">
+    <article class="post post--experience" data-post-id="<%= post._id %>" style="background-color: <%= post.background %>">
+        <header class="post-header">
+            <div class="post-title-container">
+                <h4 class="post-title"><%= post.title %></h4>
+            </div>
+            <span class="caption-left hidden">
+                <time class="post-date" datetime="<%= date_xml(post.date) %>">
+                    <%= date(post.date, "MMM YYYY") %>
+                </time>
+            </span>
+            <span class="caption-right hidden">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+        </header>
+    </article>
+</a>
