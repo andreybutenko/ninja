@@ -28,8 +28,8 @@
             <header class="tag-header">
                 <h3><%- tag %></h3>
                 <span><%- dir[tag] %> project<%- dir[tag] > 1 ? "s" : "" %></span>
-                <a class="experience-expand experience-toggle btn-flat">Expand</a>
-                <a class="experience-shrink experience-toggle btn-flat">Shrink</a>
+                <a class="experience-expand experience-toggle no-decoration btn-flat">Expand</a>
+                <a class="experience-shrink experience-toggle no-decoration btn-flat">Shrink</a>
             </header>
             <div class="tag-content">
                 <% site.tags.findOne({ name: tag }).posts.sort('date', -1).each(function(post) { %>

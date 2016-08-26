@@ -17,15 +17,20 @@ body {
     box-shadow: $size $size 5px 0px rgba(0,0,0,0.75);
 }
 
+@mixin omnishadow() {
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+}
+
 a {
+    cursor: pointer;
     color: #0088cc;
     text-decoration: none;
     border-bottom: 1px dotted rgba(0, 0, 0, 0);
+}
 
-    &:hover {
-        color: #4aa3df;
-        border-bottom: 1px dotted #4aa3df;
-    }
+a:not(.no-decoration):hover {
+    color: #4aa3df;
+    border-bottom: 1px dotted #4aa3df;
 }
 
 .btn-flat {

@@ -1,0 +1,45 @@
+header.page-header {
+    position: relative;
+    padding-right: $header-logo-width;
+    @include omnishadow();
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: nowrap;
+
+    .logo {
+        color: black;
+        width: $header-logo-width;
+        font-size: 18px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        span {
+            padding: $standard-margin;
+        }
+
+        &:hover {
+            background-color: #eee;
+        }
+    }
+
+    nav {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            padding: $standard-margin;
+
+            &:hover {
+                background-color: #eee;
+            }
+        }
+    }
+}

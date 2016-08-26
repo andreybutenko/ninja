@@ -5,12 +5,7 @@ article.portfolio-section.section-experience section.portfolio-section-content {
 
     .experience-more {
         text-align: center;
-        cursor: pointer;
         width: 100%;
-
-        &:hover {
-            border-bottom: 0 !important;
-        }
     }
 
     &.expanded {
@@ -101,11 +96,6 @@ article.portfolio-section.section-experience section.portfolio-section-content {
             .experience-expand, .experience-shrink {
                 padding: 0;
                 text-align: right;
-
-                &:hover {
-                    border-bottom: 0;
-                    cursor: pointer;
-                }
             }
         }
 

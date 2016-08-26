@@ -1,0 +1,15 @@
+.post.post--page {
+    @include omnishadow();
+    padding: $standard-margin;
+    background-color: white;
+    max-width: 100%;
+    width: $page-reduced-width;
+
+    header {
+        text-align: center;
+
+        .post-title {
+            font-size: 52px !important;
+        }
+    }
+}

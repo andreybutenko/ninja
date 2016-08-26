@@ -3,8 +3,13 @@ $break-med: 1200px;
 
 $page-width: 1400px;
 $header-width: 200px;
+$page-reduced-width: $page-width - 2 * $header-width;
 
 $animation-length: 250ms;
+
+$facts-section-width: 380px;
+
+$header-logo-width: 170px;
 
 $experience-size: 100px;
 

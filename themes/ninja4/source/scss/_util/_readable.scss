@@ -13,7 +13,35 @@
         margin-left: 1.5em;
 
         li {
-            margin-top: 0.5em;            
+            margin-top: 0.5em;
         }
     }
+
+    .photos {
+        display: flex;
+        justify-content: space-around;
+        margin: $standard-margin 0;
+        flex-wrap: wrap;
+
+        img {
+            display: inline-block;
+        }
+
+        &.photos-500 img {
+            height: 500px;
+        }
+
+        &.photos-400 img {
+            height: 400px;
+        }
+
+        &.photos-vertical {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.post.post--preview .post-content {
+    width: 80%;
 }

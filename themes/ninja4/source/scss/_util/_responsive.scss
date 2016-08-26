@@ -3,4 +3,19 @@ main.page-main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &.page-listing {
+        article {
+            max-width: 100%;
+            width: $page-reduced-width;
+            background-color: white;
+            margin-bottom: 0;
+            padding: $big-margin $standard-margin;
+
+            header.post-header h3 {
+                font-size: 32px;
+                font-weight: 200;
+            }
+        }
+    }
 }
