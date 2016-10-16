@@ -17,33 +17,25 @@ function init() {
 	scene = new THREE.Scene();
     group = new THREE.Group();
     scene.add(group);
-/*
-    var triangleShape = new THREE.Shape();
-    triangleShape.moveTo( 80, 20);
-    triangleShape.lineTo( 40, 80);
-    triangleShape.lineTo(120, 80);
 
-    drawFill(triangleShape, generateColor(), 0, 0, 0);
-    drawOutline(triangleShape, generateColor(), 0, 0, 0);
-    drawFill(triangleShape, generateColor(), 100, 0, 0);
-    drawOutline(triangleShape, generateColor(), 100, 0, 0);*/
+    for(var levels = 0; levels < 2; levels++) {
+        var points = generatePoints(20);
+        for(var i = 0; i < points.length; i++) {
+            var sorted = getNearestPoints(points[i], points);
+            var geometry = createGeometry(sorted.slice(0, 3));
 
-    var points = generatePoints(40);
-    for(var i = 0; i < points.length; i++) {
-        var sorted = getNearestPoints(points[i], points);
-        var geometry = createGeometry(sorted.slice(0, 3));
+            var color = generateColor();
 
-        var color = generateColor();
+            var fillMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.4, side: THREE.DoubleSide });
+            var fillMesh = new THREE.Mesh(geometry, fillMaterial);
+            fillMesh.position.set(0, 0, 0);
+            group.add(fillMesh);
 
-        var fillMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.5, side: THREE.DoubleSide });
-        var fillMesh = new THREE.Mesh(geometry, fillMaterial);
-        fillMesh.position.set(0, 0, 0);
-        group.add(fillMesh);
-
-        var frameMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.8, wireframe: true, side: THREE.DoubleSide });
-        var frameMesh = new THREE.Mesh(geometry, frameMaterial);
-        frameMesh.position.set(0, 0, 0);
-        group.add(frameMesh);
+            var frameMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.8, wireframe: true, side: THREE.DoubleSide });
+            var frameMesh = new THREE.Mesh(geometry, frameMaterial);
+            frameMesh.position.set(0, 0, 0);
+            group.add(frameMesh);
+        }
     }
 
 	// Lights
