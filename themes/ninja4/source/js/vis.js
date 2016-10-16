@@ -17,28 +17,8 @@ function init() {
 	camera.position.z = 200;
 
 	scene = new THREE.Scene();
-    group = new THREE.Group();
-    scene.add(group);
 
-    for(var levels = 0; levels < 2; levels++) {
-        var points = generatePoints(20);
-        for(var i = 0; i < points.length; i++) {
-            var sorted = getNearestPoints(points[i], points);
-            var geometry = createGeometry(sorted.slice(0, 3));
-
-            var color = generateColor();
-
-            var fillMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.4, side: THREE.DoubleSide });
-            var fillMesh = new THREE.Mesh(geometry, fillMaterial);
-            fillMesh.position.set(0, 0, 0);
-            group.add(fillMesh);
-
-            var frameMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.8, wireframe: true, side: THREE.DoubleSide });
-            var frameMesh = new THREE.Mesh(geometry, frameMaterial);
-            frameMesh.position.set(0, 0, 0);
-            group.add(frameMesh);
-        }
-    }
+	reset();
 
 	// Lights
 
@@ -66,6 +46,35 @@ function init() {
 	container.appendChild(renderer.domElement);
 
 	window.addEventListener('resize', onWindowResize, false);
+}
+
+function reset() {
+	if(!!group) {
+		scene.remove(group);
+	}
+
+	group = new THREE.Group();
+	scene.add(group);
+
+	for(var levels = 0; levels < 2; levels++) {
+        var points = generatePoints(20);
+        for(var i = 0; i < points.length; i++) {
+            var sorted = getNearestPoints(points[i], points);
+            var geometry = createGeometry(sorted.slice(0, 3));
+
+            var color = generateColor();
+
+            var fillMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.4, side: THREE.DoubleSide });
+            var fillMesh = new THREE.Mesh(geometry, fillMaterial);
+            fillMesh.position.set(0, 0, 0);
+            group.add(fillMesh);
+
+            var frameMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.8, wireframe: true, side: THREE.DoubleSide });
+            var frameMesh = new THREE.Mesh(geometry, frameMaterial);
+            frameMesh.position.set(0, 0, 0);
+            group.add(frameMesh);
+        }
+    }
 }
 
 function onWindowResize() {
@@ -164,6 +173,14 @@ function generateColor() {
 }
 
 // transitions
+console.log(container);
+container.addEventListener('click', function() {
+	fadeOutAnimation();
+	setTimeout(function() {
+		reset();
+		fadeInAnimation();
+	}, 2000);
+});
 
 function fadeInAnimation() {
     var ele = document.querySelector('#vis-cover canvas');
