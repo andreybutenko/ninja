@@ -82,19 +82,10 @@ function init() {
 }
 
 function setRange() {
-    if(visualizer.left) {
-        visualizer.range.x.min = 0 * visualizer.width;
-        visualizer.range.y.min = 0 * visualizer.height;
-        visualizer.range.x.max = 0.7 * visualizer.width;
-        visualizer.range.y.max = 1 * visualizer.height;
-    }
-    else {
-        visualizer.range.x.min = 0.3 * visualizer.width;
-        visualizer.range.y.min = 0 * visualizer.height;
-        visualizer.range.x.max = 1 * visualizer.width;
-        visualizer.range.y.max = 1 * visualizer.height;
-    }
-    visualizer.left = !visualizer.left;
+    visualizer.range.x.min = 0 * visualizer.width;
+    visualizer.range.y.min = 0 * visualizer.height;
+    visualizer.range.x.max = 1 * visualizer.width;
+    visualizer.range.y.max = 1 * visualizer.height;
 }
 
 function generatePoints() {
@@ -141,8 +132,8 @@ function drawPolys() {
 function drawPoly(poly) {
     // draw given poly
     var path = new Path(poly.path);
-    path.fillColor = 'rgba(' + poly.color.r + ', ' + poly.color.g + ', ' + poly.color.b + ', ' + (visualizer.opacity * 3 / 1000) + ')';
-    path.strokeColor = 'rgba(0, 0, 0, ' + (visualizer.opacity * 2 / 1000) + ')'
+    path.fillColor = 'rgba(' + poly.color.r + ', ' + poly.color.g + ', ' + poly.color.b + ', ' + 0.15 + ')';
+    path.strokeColor = 'rgba(0, 0, 0, ' + 0.18 + ')'
     path.closed = true;
 }
 
@@ -215,37 +206,7 @@ function scramble() {
     frames = 0;
 }
 
-var frames = 0;
 function onFrame(event) {
-    frames++;
-    if((visualizer.opacity < 100) && (!visualizer.fadingOut)) {
-        visualizer.opacity++;
-    }
-    if((visualizer.opacity > 0) && (visualizer.fadingOut)) {
-        visualizer.opacity -= 1;
-    }
-    if((visualizer.opacity == 0) && (visualizer.fadingOut)) {
-        init();
-        visualizer.fadingOut = false;
-    }
-    for(var i = 0; i < visualizer.displayPolys.length; i++) {
-        for(var j = 0; j < visualizer.displayPolys[i].path.length; j++) {
-            var displayPoint = visualizer.displayPolys[i].path[j];
-            var targetPoint = visualizer.polys[i].path[j];
-            var deltaVector = targetPoint.point.subtract(displayPoint.point);
-            displayPoint.point = displayPoint.point.add(deltaVector.divide(30));
-        }
-
-        visualizer.displayPolys[i].color.r += (visualizer.polys[i].color.r - visualizer.displayPolys[i].color.r) / 30;
-        visualizer.displayPolys[i].color.g += (visualizer.polys[i].color.g - visualizer.displayPolys[i].color.g) / 30;
-        visualizer.displayPolys[i].color.b += (visualizer.polys[i].color.b - visualizer.displayPolys[i].color.b) / 30;
-    }
-    if((frames >= visualizer.wait) && (!visualizer.fadingOut)) {
-        scramble();
-    }
-
-    clearScreen();
-    drawPolys();
     view.draw();
 }
 
