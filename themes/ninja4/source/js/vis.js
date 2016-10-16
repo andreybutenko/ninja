@@ -1,152 +1,136 @@
-var visualizer = {
-    width: 0,
-    height: 0,
-    points: [],
-    polys: [],
-    displayPolys: [],
-    opacity: 0,
-    fadingOut: false,
-    left: true,
-    range: {
-        x: {
-            min: 0,
-            max: 0
-        },
-        y: {
-            min: 0,
-            max: 0
-        }
-    },
-    config: {
-        connections: 5,
-        points: 30
-    },
-    wait: 300,
-    style: 1,
-    init: firstTime,
-    update: updateOptions
-}
+var container;
+var camera, scene, renderer;
+var group;
 
-function updateOptions(connections, points, wait, style) {
-    visualizer.config.connections = connections;
-    visualizer.config.points = points;
-    visualizer.wait = wait;
-    visualizer.style = style;
-    visualizer.fadingOut = true;
-}
-
-function resize() {
-    visualizer.width = view.size.width;
-    visualizer.height = view.size.height;
-}
-
-function firstTime() {
-    paper.install(window);
-    var canvas = document.getElementById('visualizerCanvas');
-    paper.setup(canvas);
-    resize();
-    init();
-}
+init();
+animate();
+fadeInAnimation();
 
 function init() {
-    setRange();
+	/*container = document.createElement('div');
+	document.body.appendChild(container);*/
+	container = document.getElementById('vis-cover');
 
-    visualizer.points = [];
-    visualizer.polys = [];
-    visualizer.displayPolys = [];
+	camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, -1000, 2000);
+	camera.position.x = 200;
+	camera.position.y = 100;
+	camera.position.z = 200;
 
-    for(var i = 0; i < visualizer.config.points; i++) {
-        var newPoint = new Point(0, 0);
-        visualizer.points.push({
-            id: uuid(),
-            point: newPoint
+	scene = new THREE.Scene();
+    group = new THREE.Group();
+    scene.add(group);
+
+    for(var levels = 0; levels < 2; levels++) {
+        var points = generatePoints(20);
+        for(var i = 0; i < points.length; i++) {
+            var sorted = getNearestPoints(points[i], points);
+            var geometry = createGeometry(sorted.slice(0, 3));
+
+            var color = generateColor();
+
+            var fillMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.4, side: THREE.DoubleSide });
+            var fillMesh = new THREE.Mesh(geometry, fillMaterial);
+            fillMesh.position.set(0, 0, 0);
+            group.add(fillMesh);
+
+            var frameMaterial = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.8, wireframe: true, side: THREE.DoubleSide });
+            var frameMesh = new THREE.Mesh(geometry, frameMaterial);
+            frameMesh.position.set(0, 0, 0);
+            group.add(frameMesh);
+        }
+    }
+
+	// Lights
+
+	var ambientLight = new THREE.AmbientLight(Math.random() * 0x10);
+	scene.add(ambientLight);
+
+	var directionalLight = new THREE.DirectionalLight(Math.random() * 0xffffff);
+	directionalLight.position.x = Math.random() - 0.5;
+	directionalLight.position.y = Math.random() - 0.5;
+	directionalLight.position.z = Math.random() - 0.5;
+	directionalLight.position.normalize();
+	scene.add(directionalLight);
+
+	var directionalLight = new THREE.DirectionalLight(Math.random() * 0xffffff);
+	directionalLight.position.x = Math.random() - 0.5;
+	directionalLight.position.y = Math.random() - 0.5;
+	directionalLight.position.z = Math.random() - 0.5;
+	directionalLight.position.normalize();
+	scene.add(directionalLight);
+
+	renderer = new THREE.CanvasRenderer();
+	renderer.setClearColor(0xffffff);
+	renderer.setPixelRatio(window.devicePixelRatio);
+	renderer.setSize(container.clientWidth, container.clientHeight);
+	container.appendChild(renderer.domElement);
+
+	window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+	camera.left = window.innerWidth / - 2;
+	camera.right = window.innerWidth / 2;
+	camera.top = window.innerHeight / 2;
+	camera.bottom = window.innerHeight / - 2;
+
+	camera.updateProjectionMatrix();
+
+	renderer.setSize(container.clientWidth, container.clientHeight);
+}
+
+function animate() {
+	requestAnimationFrame(animate);
+
+	render();
+}
+
+function render() {
+	var timer = Date.now() * 0.0001;
+
+	camera.position.x = Math.cos(timer) * 200;
+	camera.position.z = Math.sin(timer) * 200;
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+	renderer.render(scene, camera);
+}
+
+// generations
+
+function random(min, max) {
+    // generate random integer
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generatePoints(num) {
+    var points = [];
+
+	var span = container.clientWidth * 0.4;
+
+    for(var i = 0; i < num; i++) {
+        points.push({
+            x: random(-1 * span, span),
+            y: random(-400, 400),
+            z: random(-1 * span, span)
         });
     }
 
-    generatePoints();
-
-    for(var i = 0; i < visualizer.points.length; i++) {
-        var currPoint = visualizer.points[i];
-        var newPoly = createPoly(currPoint);
-        visualizer.polys.push(newPoly);
-    }
-
-    convertToDisplayPolys();
-
-    drawPolys();
-
-    view.draw();
-    view.onFrame = onFrame;
-    view.onResize = resize;
-    frames = 0;
+    return points;
 }
 
-function setRange() {
-    visualizer.range.x.min = 0 * visualizer.width;
-    visualizer.range.y.min = 0 * visualizer.height;
-    visualizer.range.x.max = 1 * visualizer.width;
-    visualizer.range.y.max = 1 * visualizer.height;
-}
-
-function generatePoints() {
-    // generate random points across canvas
-    for(var i = 0; i < visualizer.points.length; i++) {
-        var currPoint = visualizer.points[i].point;
-        currPoint.x = random(visualizer.range.x.min, visualizer.range.x.max);
-        currPoint.y = random(visualizer.range.y.min, visualizer.range.y.max);
-    }
-}
-
-function createPoly(point) {
-    // create polygon based on points nearest to give point
-    var nearestArray = getNearestPoints(point);
-
-    var path = [];
-
-    for(var j = 0; j < visualizer.config.connections; j++) {
-        var nearestPoint = nearestArray[j];
-        path.push(nearestPoint);
-    }
-
-    return {
-        path: path,
-        color: generateColor()
-    };
-}
-
-function generateColor() {
-    // generate color
-    return {
-        r: random(0, 255),
-        g: random(0, 255),
-        b: random(0, 255)
-    }
-}
-
-function drawPolys() {
-    for(var i = 0; i < visualizer.displayPolys.length; i++) {
-        drawPoly(visualizer.displayPolys[i]);
-    }
-}
-
-function drawPoly(poly) {
-    // draw given poly
-    var path = new Path(poly.path);
-    path.fillColor = 'rgba(' + poly.color.r + ', ' + poly.color.g + ', ' + poly.color.b + ', ' + 0.15 + ')';
-    path.strokeColor = 'rgba(0, 0, 0, ' + 0.18 + ')'
-    path.closed = true;
-}
-
-function getNearestPoints(point) {
-    // returns sorted array of nearest points
+function getNearestPoints(point, points) {
     var distances = [];
     var sortedArray = [];
 
-    for(var i = 0; i < visualizer.points.length; i++) {
-        if(visualizer.points[i] != point) {
+    for(var i = 0; i < points.length; i++) {
+        if(points[i] != point) {
             distances.push({
-                point: visualizer.points[i],
-                distance: point.point.getDistance(visualizer.points[i].point)
+                point: points[i],
+                distance: Math.sqrt(
+                    Math.pow(point.x - points[i].x, 2) +
+                    Math.pow(point.y - points[i].y, 2) +
+                    Math.pow(point.z - points[i].z, 2)
+                )
             });
         }
     }
@@ -162,63 +146,31 @@ function getNearestPoints(point) {
     return sortedArray;
 }
 
-function getPointById(id) {
-    for(var i = 0; i < visualizer.points.length; i++) {
-        if(id == visualizer.points[i].id) {
-            return visualizer.points[i];
-        }
+function createGeometry(points) {
+    var geometry = new THREE.Geometry();
+
+    for(var i = 0; i < 3; i++) {
+        geometry.vertices.push(new THREE.Vector3(points[i].x, points[i].y, points[i].z));
     }
+    geometry.faces.push(new THREE.Face3(0, 1, 2));
+    geometry.computeBoundingSphere();
+
+    return geometry;
 }
 
-function convertToDisplayPolys() {
-    visualizer.displayPolys = JSON.parse(JSON.stringify(visualizer.polys));
-    for(var i = 0; i < visualizer.polys.length; i++) {
-        for(var j = 0; j < visualizer.polys[i].path.length; j++) {
-            var displayPoint = visualizer.displayPolys[i].path[j];
-            var truePoint = visualizer.polys[i].path[j];
-            displayPoint.point = new Point(displayPoint.point[1], displayPoint.point[2]);
-        }
-    }
+function generateColor() {
+    var color = new THREE.Color('rgb(' + random(0, 255) + ', ' + random(0, 255) + ', ' + random(0, 255) + ')');
+    return color;
 }
 
-function clearScreen() {
-    project.clear();
+// transitions
+
+function fadeInAnimation() {
+    var ele = document.querySelector('#vis-cover canvas');
+    ele.style.opacity = 1;
 }
 
-function scramble() {
-    setRange();
-    if(visualizer.style == 0) {
-        convertToDisplayPolys();
-        generatePoints();
-        for(var i = 0; i < visualizer.polys.length; i++) {
-            visualizer.polys[i].color = generateColor();
-        }
-    }
-    if(visualizer.style == 1) {
-        convertToDisplayPolys();
-        generatePoints();
-        for(var i = 0; i < visualizer.points.length; i++) {
-            var currPoint = visualizer.points[i];
-            var newPoly = createPoly(currPoint);
-            visualizer.polys[i] = newPoly;
-        }
-    }
-    frames = 0;
-}
-
-function onFrame(event) {
-    view.draw();
-}
-
-
-function uuid() {
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-    }
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-}
-
-function random(min, max) {
-    // generate random integer
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function fadeOutAnimation() {
+    var ele = document.querySelector('#vis-cover canvas');
+    ele.style.opacity = 0;
 }

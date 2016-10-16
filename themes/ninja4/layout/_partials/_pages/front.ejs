@@ -1,6 +1,5 @@
-<div class="cover">
-    <canvas id="visualizerCanvas" resize="true" style="-webkit-user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
-    
+<div class="cover" id="vis-cover">
+
 </div>
 
 <div class="profile-img"></div>
@@ -66,8 +65,7 @@
     </div>
 </article>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        initAnimation();
-    }, false);
-</script>
+<%- js('js/three.min') %>
+<%- js('js/CanvasRenderer') %>
+<%- js('js/Projector') %>
+<%- js('js/vis') %>
