@@ -173,7 +173,6 @@ function generateColor() {
 }
 
 // transitions
-console.log(container);
 container.addEventListener('click', function() {
 	fadeOutAnimation();
 	setTimeout(function() {

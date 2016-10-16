@@ -66,6 +66,8 @@
     margin-top: -150px;
     width: 200px;
     height: 200px;
+    max-width: 20vw;
+    max-height: 20vw;
     border-radius: 100px;
     background-color: white;
     background-image: url('/img/profile-small.png');
@@ -74,6 +76,15 @@
     background-repeat: no-repeat;
     border: 2px solid black;
     z-index: 2;
+
+    @media screen and (min-width: $break-small) and (max-width: $break-med) {
+        margin-top: -100px;
+    }
+
+    @media screen and (max-width: $break-small) {
+        margin-top: -50px;
+        margin-bottom: 12px;
+    }
 }
 
 article.portfolio-section {
@@ -123,30 +134,55 @@ article.portfolio-section {
     }
 }
 
-.projects-preview {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: $big-margin;
+.projects-preview-container {
+    .projects-preview {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: $big-margin;
 
-    & > * {
-        flex: 1;
-        margin: $small-margin;
-        margin-top: $small-margin;
+        & > * {
+            flex: 1;
+            margin: $small-margin;
+            margin-top: $small-margin;
 
-        &:hover {
-            margin-top: 0;
+            &:hover {
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width: $break-small) {
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: $break-small) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .projects-preview > * {
+            margin-left: 0;
+            margin-right: 0;
+            padding-right: 0;
+        }
+
+        a.btn-flat {
+            padding-right: 24px;
         }
     }
 }
 
 .actions {
     margin-top: $standard-margin;
-    width: $page-reduced-width;
-    max-width: 500px;
+    width: 500px;
+    max-width: 100vw;
     background-color: white;
     border: 1px solid black;
     padding-top: $standard-margin;
+
+    @media screen and (max-width: $break-small) {
+        border: 0;
+    }
 
     div {
         display: flex;
