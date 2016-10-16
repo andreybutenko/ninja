@@ -40,6 +40,9 @@ a.unformatted {
   color: #4aa3df;
   text-transform: uppercase; }
 
+.btn-right {
+  float: right; }
+
 html, body, h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
   padding: 0;
@@ -126,18 +129,23 @@ header.page-header {
       header.page-header nav a:hover {
         background-color: #eee; }
 
+footer.page-footer {
+  padding-top: 32px; }
+
 .cover {
   width: 100vw;
   height: 50vw;
   max-width: 100%;
-  max-height: 40vh;
-  background-color: white; }
+  max-height: 60vh;
+  background-color: white;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%); }
   .cover canvas {
     width: 100%;
     height: 100%; }
 
 .profile-img {
-  margin-top: -100px;
+  margin-top: -200px;
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -201,7 +209,8 @@ article.portfolio-section {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
-          flex-direction: row; }
+          flex-direction: row;
+  margin-bottom: 32px; }
   .projects-preview > * {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -210,6 +219,39 @@ article.portfolio-section {
     margin-top: 8px; }
     .projects-preview > *:hover {
       margin-top: 0; }
+
+.actions {
+  margin-top: 16px;
+  width: 1000px;
+  max-width: 500px;
+  background-color: white;
+  border: 1px solid black;
+  padding-top: 16px; }
+  .actions div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-bottom: 16px; }
+    .actions div a {
+      display: block;
+      padding: 16px;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1; }
+      .actions div a:hover .icon .fa, .actions div a:hover h3 {
+        color: #4aa3df; }
+      .actions div a .icon, .actions div a .icon .fa {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em; }
+      .actions div a h3 {
+        margin-top: 8px;
+        text-align: center;
+        font-weight: 200; }
 
 article.portfolio-section.section-involvement section.portfolio-section-content {
   display: -webkit-box;

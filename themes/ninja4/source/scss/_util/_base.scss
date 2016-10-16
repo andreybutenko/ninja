@@ -48,7 +48,11 @@ a.unformatted {
     display: inline-block;
     padding: $small-margin;
     color: #4aa3df;
-    text-transform: uppercase;;
+    text-transform: uppercase;
+}
+
+.btn-right {
+    float: right;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, ul {

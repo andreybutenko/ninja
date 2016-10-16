@@ -22,11 +22,51 @@
 
 <article class="portfolio-section">
     <header class="label">
-        <h2>Projects</h2>
+        <h2>Recent Projects</h2>
     </header>
-    <section class="content projects-preview">
-        <% page.posts.slice(0, 3).each(function(post){ %>
-            <%- partial('_partials/post-tiny', {post: post, index: true}) %>
-        <% }) %>
+    <section class="content">
+        <div class="projects-preview">
+            <% page.posts.slice(0, 3).each(function(post){ %>
+                <%- partial('_partials/post-tiny', {post: post, index: true}) %>
+            <% }) %>
+        </div>
+        <a href="/projects" class="btn-flat btn-right">See more projects</a>
     </section>
 </article>
+
+<article class="actions">
+    <div>
+        <a href="/projects" class="unformatted">
+            <div class="icon">
+                <i class="fa fa-briefcase"></i>
+            </div>
+            <h3>Portfolio</h3>
+        </a>
+            <a href="/projects" class="unformatted">
+                <div class="icon">
+                    <i class="fa fa-file-text"></i>
+                </div>
+                <h3>Resume</h3>
+            </a>
+    </div>
+    <div>
+        <a href="https://www.linkedin.com/in/butenkoandrey" target="_blank" class="unformatted">
+            <div class="icon">
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <h3>LinkedIn</h3>
+        </a>
+        <a href="https://www.github.com/andreybutenko" target="_blank" class="unformatted">
+            <div class="icon">
+                <i class="fa fa-github"></i>
+            </div>
+            <h3>GitHub</h3>
+        </a>
+    </div>
+</article>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        //visualizer.init();
+    }, false);
+</script>
