@@ -1,12 +1,12 @@
 @import '_util/vars';
 @import '_util/base';
 @import '_util/responsive';
-@import '_util/readable';
 
 @import '_partial/header';
 @import '_partial/portfolio';
-@import '_partial/facts';
-@import '_partial/section-experience';
 @import '_partial/section-involvement';
-@import '_partial/post';
-@import '_partial/post-page';
+
+@import '_partial/_posts/post';
+@import '_partial/_posts/post-page';
+@import '_partial/_posts/post-cover';
+@import '_partial/_posts/post-tiny';

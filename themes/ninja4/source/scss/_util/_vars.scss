@@ -1,18 +1,21 @@
+/* Responsive */
 $break-small: 600px;
 $break-med: 1200px;
 
+/* General */
 $page-width: 1400px;
+
+/* Portfolio Sections */
 $header-width: 200px;
 $page-reduced-width: $page-width - 2 * $header-width;
 
+/* Animation */
 $animation-length: 250ms;
 
-$facts-section-width: 380px;
-
+/* Header */
 $header-logo-width: 170px;
 
-$experience-size: 100px;
-
+/* Margins */
 $small-margin: 8px;
 $standard-margin: 16px;
 $big-margin: 32px;

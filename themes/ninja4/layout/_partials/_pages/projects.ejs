@@ -1,0 +1,10 @@
+<article class="portfolio-section section-recent">
+    <header class="portfolio-section-header">
+        <h2>Recent Projects</h2>
+    </header>
+    <section class="portfolio-section-content">
+        <% page.posts.each(function(post){ %>
+          <%- partial('_partials/post-preview', {post: post, index: true}) %>
+        <% }) %>
+    </section>
+</article>

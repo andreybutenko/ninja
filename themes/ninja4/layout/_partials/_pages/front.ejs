@@ -5,11 +5,11 @@
 
 <h1>Andrey Butenko</h1>
 
-<article class="portfolio-section section-mission">
-    <header class="portfolio-section-header">
+<article class="portfolio-section">
+    <header class="label">
         <h2>Mission</h2>
     </header>
-    <section class="portfolio-section-content typography">
+    <section class="content typography">
         <p>I am a high school student and a full-stack web developer exploring business, design, engineering, music, and programming to have diverse knowledge in many topic areas. I look for opportunities to make a real impact and solve real-world problems.</p>
         <p>When working on a project, I use empathy, utilize code, and employ knowledge:</p>
         <ul>
@@ -20,23 +20,13 @@
     </section>
 </article>
 
-<article class="portfolio-section section-experience">
-    <header class="portfolio-section-header">
-        <h2>Experience</h2>
+<article class="portfolio-section">
+    <header class="label">
+        <h2>Projects</h2>
     </header>
-    <section class="portfolio-section-content">
-        <%- partial('_section/experience') %>
-        <a class="experience-more no-decoration btn-flat">See More</a>
-    </section>
-</article>
-
-<article class="portfolio-section section-recent">
-    <header class="portfolio-section-header">
-        <h2>Recent Projects</h2>
-    </header>
-    <section class="portfolio-section-content">
-        <% page.posts.each(function(post){ %>
-          <%- partial('_partials/post-preview', {post: post, index: true}) %>
+    <section class="content projects-preview">
+        <% page.posts.slice(0, 3).each(function(post){ %>
+            <%- partial('_partials/post-tiny', {post: post, index: true}) %>
         <% }) %>
     </section>
 </article>

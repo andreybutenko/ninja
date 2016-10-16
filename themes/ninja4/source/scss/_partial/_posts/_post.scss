@@ -1,4 +1,4 @@
-.readable {
+.post, .typography {
     p {
         font-size: 16px;
         line-height: 1.5em;
@@ -40,8 +40,4 @@
             align-items: center;
         }
     }
-}
-
-.post.post--preview .post-content {
-    width: 80%;
 }

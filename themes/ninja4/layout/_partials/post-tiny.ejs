@@ -1,0 +1,9 @@
+<a href="<%- url_for(post.path) %>" class="unformatted">
+    <article class="post post-tiny" data-post-id="<%= post._id %>">
+        <%- partial('_partials/post-cover', {post: post}) %>
+        <header class="post-header">
+            <h3 class="post-title"><%= post.title %></h3>
+            <span class="link">More &rsaquo;</span>
+        </header>
+    </article>
+</a>

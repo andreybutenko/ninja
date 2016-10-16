@@ -9,6 +9,8 @@ tags:
 - Angular
 - Mongo
 - Node
+cover: "formalwear.png"
+contain: true
 background: "#e67e22"
 text: "#ffffff"
 ---

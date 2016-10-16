@@ -1,0 +1,23 @@
+.post-tiny {
+    .post-title {
+        text-align: center;
+    }
+
+    header {
+        padding: $small-margin;
+        position: relative;
+
+        .link {
+            opacity: 0;
+            position: absolute;
+            top: $small-margin;
+            right: $small-margin;
+        }
+    }
+
+    &:hover header {
+        .link {
+            opacity: 1;
+        }
+    }
+}
