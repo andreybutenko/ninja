@@ -1,0 +1,26 @@
+html, body {
+    width: 100%;
+    min-height: 100%;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto Slab', sans-serif;
+    background-color: #eee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a, .link {
+    cursor: pointer;
+    color: #0088cc;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0);
+
+    &:hover {
+        color: #4aa3df;
+        border-bottom: 1px dotted #4aa3df;
+    }
+}

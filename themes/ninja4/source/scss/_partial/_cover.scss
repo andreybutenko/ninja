@@ -1,0 +1,97 @@
+.cover {
+  width: 100vw;
+  height: 50vh;
+  background-color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: $break-small) {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+  }
+
+  .profile-img {
+    background-image: url('/img/profile-cover.png');
+    width: 600px;
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media screen and (max-width: $break-small) {
+      background-position: center;
+      border-radius: 75px;
+      width: 150px;
+      height: 150px;
+      border: 2px solid black;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+  }
+
+  .text-container {
+    @media screen and (min-width: $break-small) {
+      padding-top: 150px;
+    }
+
+    @media screen and (max-width: $break-small) {
+      text-align: center;
+    }
+  }
+
+  h1 {
+    font-weight: 100;
+    font-size: 52px;
+    margin: 0;
+
+    @media screen and (max-width: $break-small) {
+      font-size: 42px;
+    }
+  }
+
+  h2 {
+    font-weight: 300;
+    margin: 0;
+
+    @media screen and (max-width: $break-small) {
+      font-size: 18px;
+    }
+  }
+}
+
+/*
+.cover {
+    width: 100vw;
+    height: 50vw;
+    max-width: 100%;
+    max-height: 50vh;
+    background-color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-img {
+    margin-top: -150px;
+    width: 200px;
+    height: 200px;
+    max-width: 20vw;
+    max-height: 20vw;
+    border-radius: 100px;
+    background-color: white;
+    background-image: url('/img/profile-small.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    z-index: 2;
+
+    @media screen and (max-width: $break-small) {
+        margin-top: -50px;
+        margin-bottom: 12px;
+    }
+}
+*/
