@@ -4,25 +4,39 @@
   background-color: white;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
   overflow: hidden;
-
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
-  @media screen and (max-width: $break-small) {
+  @media screen and (max-width: 1100px) {
+    justify-content: flex-end;
+  }
+
+  @media screen and (max-width: $break-med) {
     flex-direction: column;
-    align-items: center;
-    padding-top: 32px;
+    justify-content: center;
+  }
+
+  &.profile {
+    background-image: url('/img/profile-cover.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+    @media screen and (max-width: $break-med) {
+      background-image: none;
+    }
   }
 
   .profile-img {
-    background-image: url('/img/profile-cover.png');
-    width: 600px;
-    background-position: center bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
+    display: none;
 
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-med) {
+      display: block;
+      background-image: url('/img/profile-cover.png');
       background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
       border-radius: 75px;
       width: 150px;
       height: 150px;
@@ -33,12 +47,12 @@
   }
 
   .text-container {
-    @media screen and (min-width: $break-small) {
-      padding-top: 150px;
-    }
+    text-align: center;
+    margin-bottom: 100px;
 
-    @media screen and (max-width: $break-small) {
-      text-align: center;
+    @media screen and (min-width: $break-med) and (max-width: 1100px) {
+      text-align: right;
+      margin-right: 20px;
     }
   }
 
@@ -47,7 +61,7 @@
     font-size: 52px;
     margin: 0;
 
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-med) {
       font-size: 42px;
     }
   }
@@ -56,42 +70,18 @@
     font-weight: 300;
     margin: 0;
 
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-med) {
       font-size: 18px;
     }
   }
 }
 
-/*
-.cover {
-    width: 100vw;
-    height: 50vw;
-    max-width: 100%;
-    max-height: 50vh;
-    background-color: white;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-    overflow: hidden;
-    position: relative;
-}
+.overlap {
+    z-index: 10;
+    margin-top: -200px;
+    transform: translateZ(1px); // fix stacking issue with the clip-border'd cover
 
-.profile-img {
-    margin-top: -150px;
-    width: 200px;
-    height: 200px;
-    max-width: 20vw;
-    max-height: 20vw;
-    border-radius: 100px;
-    background-color: white;
-    background-image: url('/img/profile-small.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: 2px solid black;
-    z-index: 2;
-
-    @media screen and (max-width: $break-small) {
-        margin-top: -50px;
-        margin-bottom: 12px;
+    @media screen and (max-width: $break-med) {
+      margin-top: -50px;
     }
 }
-*/

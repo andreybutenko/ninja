@@ -1,0 +1,13 @@
+.section {
+  width: $page-width;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+}
+
+.section.mission {
+  background-color: white;
+  max-width: calc(100% - 20px);
+  border: 1px solid black;
+}

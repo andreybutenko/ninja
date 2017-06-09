@@ -410,6 +410,100 @@ template {
 [hidden] {
   display: none; }
 
+.cover {
+  width: 100vw;
+  height: 50vh;
+  background-color: white;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media screen and (max-width: 1100px) {
+    .cover {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; } }
+  @media screen and (max-width: 740px) {
+    .cover {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+  .cover.profile {
+    background-image: url("/img/profile-cover.png");
+    background-repeat: no-repeat;
+    background-position: left bottom; }
+    @media screen and (max-width: 740px) {
+      .cover.profile {
+        background-image: none; } }
+  .cover .profile-img {
+    display: none; }
+    @media screen and (max-width: 740px) {
+      .cover .profile-img {
+        display: block;
+        background-image: url("/img/profile-cover.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 75px;
+        width: 150px;
+        height: 150px;
+        border: 2px solid black;
+        overflow: hidden;
+        margin-bottom: 16px; } }
+  .cover .text-container {
+    text-align: center;
+    margin-bottom: 100px; }
+    @media screen and (min-width: 740px) and (max-width: 1100px) {
+      .cover .text-container {
+        text-align: right;
+        margin-right: 20px; } }
+  .cover h1 {
+    font-weight: 100;
+    font-size: 52px;
+    margin: 0; }
+    @media screen and (max-width: 740px) {
+      .cover h1 {
+        font-size: 42px; } }
+  .cover h2 {
+    font-weight: 300;
+    margin: 0; }
+    @media screen and (max-width: 740px) {
+      .cover h2 {
+        font-size: 18px; } }
+
+.overlap {
+  z-index: 10;
+  margin-top: -200px;
+  -webkit-transform: translateZ(1px);
+          transform: translateZ(1px); }
+  @media screen and (max-width: 740px) {
+    .overlap {
+      margin-top: -50px; } }
+
+.section {
+  width: 900px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px; }
+
+.section.mission {
+  background-color: white;
+  max-width: calc(100% - 20px);
+  border: 1px solid black; }
+
 header.page-header {
   position: relative;
   background-color: #fff;
@@ -450,96 +544,3 @@ header.page-header {
       padding: 16px; }
       header.page-header nav a:hover {
         background-color: #eee; }
-
-.cover {
-  width: 100vw;
-  height: 50vh;
-  background-color: white;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
-  @media screen and (max-width: 600px) {
-    .cover {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      padding-top: 32px; } }
-  .cover .profile-img {
-    background-image: url("/img/profile-cover.png");
-    width: 600px;
-    background-position: center bottom;
-    background-size: contain;
-    background-repeat: no-repeat; }
-    @media screen and (max-width: 600px) {
-      .cover .profile-img {
-        background-position: center;
-        border-radius: 75px;
-        width: 150px;
-        height: 150px;
-        border: 2px solid black;
-        overflow: hidden;
-        margin-bottom: 16px; } }
-  @media screen and (min-width: 600px) {
-    .cover .text-container {
-      padding-top: 150px; } }
-  @media screen and (max-width: 600px) {
-    .cover .text-container {
-      text-align: center; } }
-  .cover h1 {
-    font-weight: 100;
-    font-size: 52px;
-    margin: 0; }
-    @media screen and (max-width: 600px) {
-      .cover h1 {
-        font-size: 42px; } }
-  .cover h2 {
-    font-weight: 300;
-    margin: 0; }
-    @media screen and (max-width: 600px) {
-      .cover h2 {
-        font-size: 18px; } }
-
-/*
-.cover {
-    width: 100vw;
-    height: 50vw;
-    max-width: 100%;
-    max-height: 50vh;
-    background-color: white;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
-    overflow: hidden;
-    position: relative;
-}
-
-.profile-img {
-    margin-top: -150px;
-    width: 200px;
-    height: 200px;
-    max-width: 20vw;
-    max-height: 20vw;
-    border-radius: 100px;
-    background-color: white;
-    background-image: url('/img/profile-small.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: 2px solid black;
-    z-index: 2;
-
-    @media screen and (max-width: $break-small) {
-        margin-top: -50px;
-        margin-bottom: 12px;
-    }
-}
-*/
