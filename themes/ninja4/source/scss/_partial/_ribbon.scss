@@ -4,11 +4,17 @@
   .ribbon-body {
     display: flex;
     flex-direction: row-reverse;
+    max-width: calc(100% - 40px);
 
     margin-top: -16px;
     padding-bottom: 48px;
     box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.75);
     overflow-y: hidden;
+
+    @media screen and (max-width: $break-small) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
 
     .hex {
       width: 200px;
@@ -17,15 +23,29 @@
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       transition: clip-path 250ms;
       margin-right: 20px;
+      background-size: contain;
+      background-position: center;
 
       &:hover {
         clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+      }
+
+      @media screen and (max-width: $break-small) {
+        margin-right: 0;
+        margin-bottom: 20px;
       }
     }
 
     .content {
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
+
+      @media screen and (max-width: $break-small) {
+        .header {
+          text-align: center;
+        }
+      }
 
       .title {
         margin: 0;
@@ -40,11 +60,17 @@
       .footer {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
+
+        @media screen and (max-width: $break-small) {
+          justify-content: center;
+        }
 
         a {
           padding: 8px 10px;
           margin-right: 5px;
+          margin-bottom: 5px;
           color: rgba(1, 1, 1, 0.5);
           transition: color 250ms;
 
@@ -57,6 +83,10 @@
           margin-left: auto;
           margin-right: 0;
           opacity: 1;
+
+          @media screen and (max-width: $break-small) {
+            margin-left: inherit;
+          }
         }
       }
     }

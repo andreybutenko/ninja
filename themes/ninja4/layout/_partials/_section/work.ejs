@@ -1,4 +1,4 @@
-<% page.posts.reverse().each(function(post) { %>
+<% page.posts.sort('priority', -1).each(function(post) { %>
   <%- partial('../ribbon', {post: post, index: true}) %>
 <% }) %>
 

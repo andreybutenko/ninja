@@ -6,7 +6,7 @@ text-color: '#ffffff'
 hex-color: '#000000'
 hex-icon: 'schoolmarket-icon.png'
 construction: false
-priority: 4
+priority: 5
 timeframe: Winter 2016
 tags:
 - Java

@@ -575,10 +575,20 @@ header.page-header {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    max-width: calc(100% - 40px);
     margin-top: -16px;
     padding-bottom: 48px;
     box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.75);
     overflow-y: hidden; }
+    @media screen and (max-width: 600px) {
+      .ribbon .ribbon-body {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
     .ribbon .ribbon-body .hex {
       width: 200px;
       height: 200px;
@@ -590,10 +600,16 @@ header.page-header {
       transition: -webkit-clip-path 250ms;
       transition: clip-path 250ms;
       transition: clip-path 250ms, -webkit-clip-path 250ms;
-      margin-right: 20px; }
+      margin-right: 20px;
+      background-size: contain;
+      background-position: center; }
       .ribbon .ribbon-body .hex:hover {
         -webkit-clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
                 clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%); }
+      @media screen and (max-width: 600px) {
+        .ribbon .ribbon-body .hex {
+          margin-right: 0;
+          margin-bottom: 20px; } }
     .ribbon .ribbon-body .content {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -601,7 +617,13 @@ header.page-header {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
-              flex-direction: column; }
+              flex-direction: column;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1; }
+      @media screen and (max-width: 600px) {
+        .ribbon .ribbon-body .content .header {
+          text-align: center; } }
       .ribbon .ribbon-body .content .title {
         margin: 0;
         font-weight: 300;
@@ -618,10 +640,18 @@ header.page-header {
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         width: 100%; }
+        @media screen and (max-width: 600px) {
+          .ribbon .ribbon-body .content .footer {
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center; } }
         .ribbon .ribbon-body .content .footer a {
           padding: 8px 10px;
           margin-right: 5px;
+          margin-bottom: 5px;
           color: rgba(1, 1, 1, 0.5);
           transition: color 250ms; }
           .ribbon .ribbon-body .content .footer a:hover {
@@ -630,6 +660,9 @@ header.page-header {
           margin-left: auto;
           margin-right: 0;
           opacity: 1; }
+          @media screen and (max-width: 600px) {
+            .ribbon .ribbon-body .content .footer .read-more {
+              margin-left: inherit; } }
 
 .ribbon-blank .ribbon-body {
   background-color: #eee;
