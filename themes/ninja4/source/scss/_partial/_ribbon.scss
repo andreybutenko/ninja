@@ -1,0 +1,72 @@
+.ribbon {
+  display: flex;
+
+  .ribbon-body {
+    display: flex;
+    flex-direction: row-reverse;
+
+    margin-top: -16px;
+    padding-bottom: 48px;
+    box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.75);
+    overflow-y: hidden;
+
+    .hex {
+      width: 200px;
+      height: 200px;
+      flex: 0 0 200px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: clip-path 250ms;
+      margin-right: 20px;
+
+      &:hover {
+        clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        margin: 0;
+        font-weight: 300;
+        font-size: 32px;
+      }
+
+      .excerpt {
+        flex-grow: 1;
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        a {
+          padding: 8px 10px;
+          margin-right: 5px;
+          color: rgba(1, 1, 1, 0.5);
+          transition: color 250ms;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+
+        .read-more {
+          margin-left: auto;
+          margin-right: 0;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.ribbon-blank {
+  .ribbon-body {
+    background-color: #eee;
+    padding-bottom: 40px;
+    box-shadow: none;
+  }
+}

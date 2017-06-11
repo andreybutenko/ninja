@@ -4,6 +4,21 @@
   margin-left: auto;
   margin-right: auto;
   padding: 16px;
+
+  &.wide {
+    width: 100%;
+    margin-right: inherit;
+    margin-left: inherit;
+    padding: 0;
+  }
+
+  .thin {
+    width: $page-width;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+  }
 }
 
 .section.mission {

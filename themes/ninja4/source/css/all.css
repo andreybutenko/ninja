@@ -10,14 +10,21 @@ body {
 * {
   box-sizing: border-box; }
 
-a, .link {
+a:not(.unstyled) {
   cursor: pointer;
   color: #0088cc;
   text-decoration: none;
   border-bottom: 1px dotted transparent; }
-  a:hover, .link:hover {
+  a:not(.unstyled):hover {
     color: #4aa3df;
     border-bottom: 1px dotted #4aa3df; }
+
+a.unstyled {
+  color: inherit;
+  text-decoration: none; }
+
+p {
+  line-height: 1.5em; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -498,6 +505,17 @@ template {
   margin-left: auto;
   margin-right: auto;
   padding: 16px; }
+  .section.wide {
+    width: 100%;
+    margin-right: inherit;
+    margin-left: inherit;
+    padding: 0; }
+  .section .thin {
+    width: 900px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px; }
 
 .section.mission {
   background-color: white;
@@ -544,3 +562,76 @@ header.page-header {
       padding: 16px; }
       header.page-header nav a:hover {
         background-color: #eee; }
+
+.ribbon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .ribbon .ribbon-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    margin-top: -16px;
+    padding-bottom: 48px;
+    box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.75);
+    overflow-y: hidden; }
+    .ribbon .ribbon-body .hex {
+      width: 200px;
+      height: 200px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 200px;
+              flex: 0 0 200px;
+      -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+              clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: -webkit-clip-path 250ms;
+      transition: clip-path 250ms;
+      transition: clip-path 250ms, -webkit-clip-path 250ms;
+      margin-right: 20px; }
+      .ribbon .ribbon-body .hex:hover {
+        -webkit-clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+                clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%); }
+    .ribbon .ribbon-body .content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .ribbon .ribbon-body .content .title {
+        margin: 0;
+        font-weight: 300;
+        font-size: 32px; }
+      .ribbon .ribbon-body .content .excerpt {
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1; }
+      .ribbon .ribbon-body .content .footer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        width: 100%; }
+        .ribbon .ribbon-body .content .footer a {
+          padding: 8px 10px;
+          margin-right: 5px;
+          color: rgba(1, 1, 1, 0.5);
+          transition: color 250ms; }
+          .ribbon .ribbon-body .content .footer a:hover {
+            color: inherit; }
+        .ribbon .ribbon-body .content .footer .read-more {
+          margin-left: auto;
+          margin-right: 0;
+          opacity: 1; }
+
+.ribbon-blank .ribbon-body {
+  background-color: #eee;
+  padding-bottom: 40px;
+  box-shadow: none; }

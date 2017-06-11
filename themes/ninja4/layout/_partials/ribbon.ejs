@@ -1,0 +1,36 @@
+<%
+  function darken(color, percent) {
+    console.log(color, percent);
+    // Source: http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors/13542669#13542669
+    var f = parseInt(color.slice(1), 16);
+    var t = percent < 0 ? 0 : 255;
+    var p = percent < 0 ? percent * -1 : percent;
+
+    var R = f >> 16;
+    var G = f >> 8&0x00FF
+    var B = f&0x0000FF;
+
+    return "#" +  (0x1000000 + (Math.round((t - R) * p) + R) *  0x10000 + (Math.round((t - G) *  p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+  }
+%>
+<article class="ribbon" style="color: <%= post['text-color'] %>; background-color: <%= darken(post['background-color'], 0.1) %>;">
+  <div class="ribbon-body thin" style="background-color: <%= post['background-color'] %>;">
+    <div class="content">
+      <header class="header">
+        <a href="<%- url_for(post.path) %>" class="unstyled"><h3 class="title"><%= post.title %></h3></a>
+        <span class="timeframe"><%= post['timeframe'] %></span>
+      </header>
+      <section class="excerpt">
+        <%- post.excerpt %>
+      </section>
+      <footer class="footer">
+        <% post.tags.each(function(tag) { %>
+          <a href="/tags/<%= tag.slug %>" class="unstyled" style="background-color: <%= darken(post['background-color'], post['theme'] == 'dark' ? 0.1 : -0.1) %>;"><%= tag.name %></a>
+        <% }) %>
+        <a href="<%- url_for(post.path) %>" class="read-more unstyled" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      </footer>
+    </div>
+    <a class="hex unstyled" style="background-color: <%= post['hex-color'] %>;" href="<%- url_for(post.path) %>">
+    </a>
+  </div>
+</article>

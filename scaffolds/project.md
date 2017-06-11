@@ -1,9 +1,9 @@
 ---
 title: {{ title }}
-priority: 
+priority:
 timeframe:
 tags:
-
+theme: 
 background-color: ''
 text-color: ''
 hex-color: ''
