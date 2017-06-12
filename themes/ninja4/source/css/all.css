@@ -35,6 +35,9 @@ li {
   line-height: 1.5em;
   margin-bottom: 0.5em; }
 
+p img {
+  max-width: 100%; }
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -663,6 +666,29 @@ template {
   background-color: white;
   max-width: calc(100% - 20px);
   border: 1px solid black; }
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 2em 0; }
+  .gallery a {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 calc(33% - 10px);
+            flex: 1 0 calc(33% - 10px);
+    margin: 5px;
+    text-decoration: none; }
+    .gallery a:hover {
+      border-bottom: 0; }
+    @media screen and (max-width: 600px) {
+      .gallery a {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 calc(50% - 10px);
+                flex: 1 0 calc(50% - 10px); } }
+    .gallery a img {
+      width: 100%; }
 
 header.page-header {
   position: relative;
