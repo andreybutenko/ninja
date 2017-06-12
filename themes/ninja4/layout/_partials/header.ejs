@@ -2,8 +2,10 @@
     <a href="<%= config.root %>" class="logo no-decoration">
         <span><%= config.title %></a></span>
     </a>
-    <nav>
-        <a href="<%= config.root %>" class="nav-link no-decoration"><%= __('Home') %></a>
-        <a href="<%= config.root + config.archive_dir %>" class="nav-link no-decoration"><%= __('Posts') %></a>
-    </nav>
+    <% if(false) { %>
+      <nav>
+          <a href="<%= config.root %>" class="nav-link no-decoration"><%= __('Home') %></a>
+          <a href="<%= config.root + config.archive_dir %>" class="nav-link no-decoration"><%= __('Posts') %></a>
+      </nav>
+    <% } %>
 </header>
