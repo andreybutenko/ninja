@@ -11,6 +11,8 @@ timeframe: Spring 2017
 tags:
 - Unity
 - C#
+categories:
+- Projects
 ---
 This game is based upon **[Arctic Choices](http://wwf.panda.org/what_we_do/where_we_work/arctic/what_we_do/arctic_choices.cfm)**, a board game created by the [Natural Capital project](http://www.naturalcapitalproject.org) to help teams of participants (business leaders, government officials, etc.) to understand the benefits and consequences of business development in highly climate-sensitive environments like the Arctic Circle.
 <!-- more -->

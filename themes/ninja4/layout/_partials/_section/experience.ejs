@@ -1,0 +1,5 @@
+<div class="boxes-container">
+  <% site.categories.findOne({ name: 'Experience'}).posts.sort('priority', -1).each(function(post) { %>
+    <%- partial('../boxes', {post: post, index: true}) %>
+  <% }) %>
+</div>

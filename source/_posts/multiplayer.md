@@ -14,6 +14,8 @@ tags:
 - C#
 - Networking
 - Modelling
+categories:
+- Projects
 ---
 An exploration of multiplayer. Before this project, I hadn't done much work with Unity - the game engine powering the client - real-time networking, or terrain generation. This project was an interesting intersection of all of these topics!
 <!-- more -->

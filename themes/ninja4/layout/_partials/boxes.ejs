@@ -1,0 +1,25 @@
+<a href="<%- url_for(post.path) %>" class="box unstyled" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;">
+  <div class="logo" style="background-image: url('/images/<%= post['icon'] %>');"></div>
+  <div class="content">
+    <h3 class="title"><%= post['position'] %></h3>
+    <span class="subtitle"><span><%= post['company'] %>,</span> <span><%= post['timeframe'] %></span></span>
+    <span class="read-more" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+  </div>
+</a>
+<!--
+
+
+
+  <div class="content">
+    <h3 class="title"><%= post['position'] %></h3>
+    <span class="subtitle"><span><%= post['company'] %>,</span> <span><%= post['timeframe'] %></span></span>
+
+  </div>
+
+-->
+<!--
+<div><i class="fa fa-building-o fa-fw" aria-hidden="true"></i> <%= post['company'] %></div>
+<div><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i> <%= post['timeframe'] %></div>
+<div><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i> <%= post['length'] %></div>
+<div><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <%= post['location'] %></div>
+-->

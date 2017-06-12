@@ -25,6 +25,7 @@
       margin-right: 20px;
       background-size: contain;
       background-position: center;
+      background-repeat: no-repeat;
 
       &:hover {
         clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);

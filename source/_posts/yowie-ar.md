@@ -13,6 +13,8 @@ tags:
 - C#
 - Modelling
 - Vuforia
+categories:
+- Projects
 ---
 An augmented reality app developed using Unity and Vuforia. I modelled Boof — a character from the Yowie franchise — using Blender, then created 3 animations for him using Unity's animation tools: idle, jump, and backflip.
 <!-- more -->

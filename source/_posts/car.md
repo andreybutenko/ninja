@@ -12,6 +12,8 @@ tags:
 - Arduino
 - C++
 - Robotics
+categories:
+- Projects
 ---
 This project was an interesting one, as it was the first time I'd worked with robotics. The physical difficulties of construction and organization came up, as did the limitations of hardware accuracy. The end result is something I am pretty pleased with.
 <!-- more -->

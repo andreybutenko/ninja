@@ -11,6 +11,8 @@ timeframe: Winter 2016
 tags:
 - Java
 - Android
+categories:
+- Projects
 ---
 An Android-native app for school clubs to raise money through a "Digital Yard Sale" which students and community members can participate in.
 <!-- more -->

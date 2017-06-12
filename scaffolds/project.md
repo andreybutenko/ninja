@@ -3,11 +3,13 @@ title: {{ title }}
 priority:
 timeframe:
 tags:
-theme: 
+theme:
 background-color: ''
 text-color: ''
 hex-color: ''
 hex-icon: ''
 
 construction: false
+categories:
+- Projects
 ---

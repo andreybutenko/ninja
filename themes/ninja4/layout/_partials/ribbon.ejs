@@ -1,6 +1,5 @@
 <%
   function darken(color, percent) {
-    console.log(color, percent);
     // Source: http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors/13542669#13542669
     var f = parseInt(color.slice(1), 16);
     var t = percent < 0 ? 0 : 255;
@@ -30,7 +29,6 @@
         <a href="<%- url_for(post.path) %>" class="read-more unstyled" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
       </footer>
     </div>
-    <% console.log(post.asset_dir) %>
     <a class="hex unstyled" style="background-color: <%= post['hex-color'] %>; background-image: url('/images/<%= post['hex-icon'] %>')" href="<%- url_for(post.path) %>">
     </a>
   </div>
