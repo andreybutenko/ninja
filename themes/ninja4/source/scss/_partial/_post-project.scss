@@ -40,6 +40,13 @@
           &:hover {
             padding: 10px 10px;
           }
+
+          @media screen and (max-width: $break-med) {
+            text-align: center;
+            i.fa {
+              width: 100%;
+            }
+          }
         }
       }
     }

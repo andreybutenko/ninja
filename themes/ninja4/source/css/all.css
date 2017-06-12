@@ -844,6 +844,11 @@ header.page-header {
         transition: padding 250ms; }
         .post-project article .sidebar .buttons a:hover {
           padding: 10px 10px; }
+        @media screen and (max-width: 740px) {
+          .post-project article .sidebar .buttons a {
+            text-align: center; }
+            .post-project article .sidebar .buttons a i.fa {
+              width: 100%; } }
 
 .ribbon {
   display: -webkit-box;
