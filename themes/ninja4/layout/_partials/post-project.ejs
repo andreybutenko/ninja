@@ -1,0 +1,33 @@
+<div class="post-project">
+  <div class="cover hexagon" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;">
+    <a class="hex unstyled" style="background-color: <%= post['hex-color'] %>; background-image: url('/images/<%= post['hex-icon'] %>')" href="<%- url_for(post.path) %>"></a>
+    <div class="text-container">
+      <h1><%= post['title'] %></h1>
+      <h2><%= post['timeframe'] %></h2>
+    </div>
+  </div>
+
+  <article class="overlap-content">
+    <div class="sidebar">
+      <% if(typeof post.links != 'undefined') { %>
+        <% if(post.links.length > 0) { %>
+          <b>Links</b>
+        <% } %>
+        <div class="buttons">
+          <% for(var i = 0; i < post.links.length; i++) { %>
+            <% var data = post.links[i].split(', ') %>
+            <a href="<%= data[2] %>" class="unstyled" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;"><i class="fa fa-<%= data[0] %> fa-fw" aria-hidden="true"></i> <%= data[1] %></a>
+          <% } %>
+        </div>
+      <% } %>
+
+      <b>Tags</b>
+      <div class="buttons">
+        <% post.tags.each(function(tag) { %>
+          <a href="/tags/<%= tag.slug %>" class="unstyled" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;"><%= tag.name %></a>
+        <% }) %>
+      </div>
+    </div>
+    <%- post.content %>
+  </article>
+</div>
