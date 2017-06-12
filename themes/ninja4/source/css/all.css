@@ -527,6 +527,7 @@ template {
 .cover {
   width: 100vw;
   height: 50vh;
+  min-height: 400px;
   background-color: white;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
@@ -557,7 +558,8 @@ template {
   .cover.profile {
     background-image: url("/img/profile-cover.png");
     background-repeat: no-repeat;
-    background-position: left bottom; }
+    background-position: left bottom;
+    background-size: contain; }
     @media screen and (max-width: 740px) {
       .cover.profile {
         background-image: none; } }
@@ -569,7 +571,8 @@ template {
     height: 70vh;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    min-height: 600px; }
     .cover.hexagon .text-container {
       text-align: center;
       margin-right: 0;
@@ -629,7 +632,7 @@ template {
         font-size: 18px; } }
 
 .overlap {
-  margin-top: -200px;
+  margin-top: -150px;
   -webkit-transform: translateZ(1px);
           transform: translateZ(1px); }
   @media screen and (max-width: 740px) {

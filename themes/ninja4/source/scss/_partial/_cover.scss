@@ -1,6 +1,8 @@
 .cover {
   width: 100vw;
   height: 50vh;
+  min-height: 400px;
+
   background-color: white;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
   overflow: hidden;
@@ -21,6 +23,7 @@
     background-image: url('/img/profile-cover.png');
     background-repeat: no-repeat;
     background-position: left bottom;
+    background-size: contain;
 
     @media screen and (max-width: $break-med) {
       background-image: none;
@@ -31,6 +34,7 @@
     flex-direction: column;
     height: 70vh;
     justify-content: center;
+    min-height: 600px;
 
     .text-container {
       text-align: center;
@@ -105,7 +109,7 @@
 }
 
 .overlap {
-  margin-top: -200px;
+  margin-top: -150px;
   transform: translateZ(1px); // fix stacking issue with the clip-border'd cover
 
   @media screen and (max-width: $break-med) {
