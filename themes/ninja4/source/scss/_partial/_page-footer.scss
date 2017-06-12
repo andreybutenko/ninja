@@ -46,6 +46,14 @@
         color: #b7b7b7;
         transition: color 250ms;
 
+        @media screen and (max-width: $break-small) {
+          text-align: center;
+
+          i.fa {
+            width: 100%;
+          }
+        }
+
         &:hover {
           color: white;
         }

@@ -771,6 +771,11 @@ header.page-header {
       margin-bottom: 10px;
       color: #b7b7b7;
       transition: color 250ms; }
+      @media screen and (max-width: 600px) {
+        .page-footer .content .social a {
+          text-align: center; }
+          .page-footer .content .social a i.fa {
+            width: 100%; } }
       .page-footer .content .social a:hover {
         color: white; }
       .page-footer .content .social a i.fa {
