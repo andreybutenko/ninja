@@ -1,0 +1,20 @@
+<div class="post-experience">
+  <div class="cover hexagon" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;">
+    <a class="hex unstyled" style="background-image: url('/images/<%= post['icon'] %>')" href="<%- url_for(post.path) %>"></a>
+    <div class="text-container">
+      <h1><%= post['position'] %></h1>
+      <h2><%= post['company'] %></h2>
+    </div>
+  </div>
+
+  <article class="overlap-content">
+    <div class="info">
+      <div><i class="fa fa-building-o fa-fw" aria-hidden="true"></i> <%= post['company'] %></div>
+      <div><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i> <%= post['timeframe'] %></div>
+      <div><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i> <%= post['length'] %></div>
+      <div><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <%= post['location'] %></div>
+    </div>
+
+    <%- post.content %>
+  </article>
+</div>

@@ -10,6 +10,10 @@ body {
 * {
   box-sizing: border-box; }
 
+.page-main {
+  overflow-x: hidden;
+  padding-bottom: 200px; }
+
 a:not(.unstyled) {
   cursor: pointer;
   color: #0088cc;
@@ -24,7 +28,12 @@ a.unstyled {
   text-decoration: none; }
 
 p {
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  margin-top: 0; }
+
+li {
+  line-height: 1.5em;
+  margin-bottom: 0.5em; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -537,6 +546,37 @@ template {
     @media screen and (max-width: 740px) {
       .cover.profile {
         background-image: none; } }
+  .cover.hexagon {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 70vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .cover.hexagon .text-container {
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 100px; }
+    .cover.hexagon .hex {
+      width: 200px;
+      height: 200px;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 200px;
+              flex: 0 0 200px;
+      -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+              clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: -webkit-clip-path 250ms;
+      transition: clip-path 250ms;
+      transition: clip-path 250ms, -webkit-clip-path 250ms;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 20px; }
+      .cover.hexagon .hex:hover {
+        -webkit-clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+                clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%); }
   .cover .profile-img {
     display: none; }
     @media screen and (max-width: 740px) {
@@ -562,7 +602,7 @@ template {
   .cover h1 {
     font-weight: 100;
     font-size: 52px;
-    margin: 0; }
+    margin: 0 10px; }
     @media screen and (max-width: 740px) {
       .cover h1 {
         font-size: 42px; } }
@@ -574,13 +614,19 @@ template {
         font-size: 18px; } }
 
 .overlap {
-  z-index: 10;
   margin-top: -200px;
   -webkit-transform: translateZ(1px);
           transform: translateZ(1px); }
   @media screen and (max-width: 740px) {
     .overlap {
       margin-top: -50px; } }
+
+.overlap-content {
+  -webkit-transform: translateZ(1px);
+          transform: translateZ(1px);
+  margin-top: -150px;
+  background-color: #eee;
+  min-height: 50vh; }
 
 .section {
   width: 900px;
@@ -645,6 +691,31 @@ header.page-header {
       padding: 16px; }
       header.page-header nav a:hover {
         background-color: #eee; }
+
+.post-experience article {
+  width: 900px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px; }
+  .post-experience article .info {
+    display: inline-block;
+    float: right;
+    border: 1px solid black;
+    padding: 16px;
+    margin: 0 0 16px 16px; }
+    @media screen and (max-width: 740px) {
+      .post-experience article .info {
+        float: none;
+        display: table;
+        margin: 0 auto;
+        margin-bottom: 16px; } }
+    .post-experience article .info div {
+      margin-bottom: 10px; }
+      .post-experience article .info div:last-of-type {
+        margin-bottom: 0; }
+      .post-experience article .info div i.fa {
+        font-size: 24px; }
 
 .ribbon {
   display: -webkit-box;
@@ -715,7 +786,8 @@ header.page-header {
       .ribbon .ribbon-body .content .excerpt {
         -webkit-box-flex: 1;
             -ms-flex-positive: 1;
-                flex-grow: 1; }
+                flex-grow: 1;
+        margin-top: 8px; }
       .ribbon .ribbon-body .content .footer {
         display: -webkit-box;
         display: -ms-flexbox;

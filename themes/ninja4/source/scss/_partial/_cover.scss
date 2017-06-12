@@ -27,6 +27,34 @@
     }
   }
 
+  &.hexagon {
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+
+    .text-container {
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 100px;
+    }
+
+    .hex {
+      width: 200px;
+      height: 200px;
+      flex: 0 0 200px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: clip-path 250ms;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 20px;
+
+      &:hover {
+        clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
+      }
+    }
+  }
+
   .profile-img {
     display: none;
 
@@ -59,7 +87,7 @@
   h1 {
     font-weight: 100;
     font-size: 52px;
-    margin: 0;
+    margin: 0 10px;
 
     @media screen and (max-width: $break-med) {
       font-size: 42px;
@@ -77,11 +105,17 @@
 }
 
 .overlap {
-    z-index: 10;
-    margin-top: -200px;
-    transform: translateZ(1px); // fix stacking issue with the clip-border'd cover
+  margin-top: -200px;
+  transform: translateZ(1px); // fix stacking issue with the clip-border'd cover
 
-    @media screen and (max-width: $break-med) {
-      margin-top: -50px;
-    }
+  @media screen and (max-width: $break-med) {
+    margin-top: -50px;
+  }
+}
+
+.overlap-content {
+  transform: translateZ(1px); // fix stacking issue with the clip-border'd cover
+  margin-top: -150px;
+  background-color: #eee;
+  min-height: 50vh;
 }

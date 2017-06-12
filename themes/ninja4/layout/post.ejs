@@ -1,3 +1,5 @@
 <main class="page-main">
-  <%- partial('_partials/post', {post: page, index: false}) %>
+  <% if(page.categories.data[0].name == 'Experience') {%>
+    <%- partial('_partials/post-experience', {post: page, index: false}) %>
+  <% } %>
 </main>

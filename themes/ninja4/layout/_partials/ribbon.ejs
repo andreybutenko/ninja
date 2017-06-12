@@ -29,7 +29,6 @@
         <a href="<%- url_for(post.path) %>" class="read-more unstyled" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
       </footer>
     </div>
-    <a class="hex unstyled" style="background-color: <%= post['hex-color'] %>; background-image: url('/images/<%= post['hex-icon'] %>')" href="<%- url_for(post.path) %>">
-    </a>
+    <a class="hex unstyled" style="background-color: <%= post['hex-color'] %>; background-image: url('/images/<%= post['hex-icon'] %>')" href="<%- url_for(post.path) %>"></a>
   </div>
 </article>

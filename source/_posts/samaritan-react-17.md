@@ -15,5 +15,4 @@ tags:
 categories:
 - Experience
 ---
-hello!
-<!-- more -->
+I am starting this position later in June, and will update this page with more information soon!
