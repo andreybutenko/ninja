@@ -1,0 +1,8 @@
+<a href="<%- url_for(post.path) %>" class="box unstyled" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;">
+  <div class="logo" style="background-image: url('/images/<%= post['icon'] %>');"></div>
+  <div class="content">
+    <h3 class="title"><%= post['position'] %></h3>
+    <span class="subtitle"><span><%= post['company'] %>,</span> <span><%= post['timeframe'] %></span></span>
+    <span class="read-more" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+  </div>
+</a>

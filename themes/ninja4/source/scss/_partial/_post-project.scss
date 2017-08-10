@@ -1,0 +1,54 @@
+.post-project {
+  article {
+    width: $page-width;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      float: right;
+      margin: 16px;
+      margin-top: 0;
+
+      @media screen and (max-width: $break-med) {
+        float: none;
+        margin-bottom: 16px;
+      }
+
+      b {
+        line-height: 1.5em;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: $break-med) {
+          flex-direction: row;
+        }
+
+        a {
+          display: block;
+          padding: 8px 10px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          transition: padding 250ms;
+
+          &:hover {
+            padding: 10px 10px;
+          }
+
+          @media screen and (max-width: $break-med) {
+            text-align: center;
+            i.fa {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

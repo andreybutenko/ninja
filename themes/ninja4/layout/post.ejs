@@ -1,0 +1,11 @@
+<main class="page-main">
+  <% if(typeof page.categories == 'undefined') { %>
+    <%- partial('_partials/post', {post: page, index: false}) %>
+  <% } else if(page.categories.data[0].name == 'Experience') {%>
+    <%- partial('_partials/post-experience', {post: page, index: false}) %>
+  <% } else if(page.categories.data[0].name == 'Projects') { %>
+    <%- partial('_partials/post-project', {post: page, index: false}) %>
+  <% } else { %>
+    <%- partial('_partials/post', {post: page, index: false}) %>
+  <% } %>
+</main>

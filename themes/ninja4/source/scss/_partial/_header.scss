@@ -1,0 +1,36 @@
+header.page-header {
+  position: relative;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: nowrap;
+
+  .logo {
+    color: black;
+    font-size: 18px;
+    padding: 16px;
+    text-align: center;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 16px;
+
+    a {
+      padding: 16px;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+}

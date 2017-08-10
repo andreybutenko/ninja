@@ -1,0 +1,80 @@
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: $page-width;
+  max-width: calc(100% - 20px);
+  margin: 0 auto;
+
+  @media screen and (max-width: $break-small) {
+    flex-direction: column;
+  }
+
+  .box {
+    flex: 1 1;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.75);
+    padding: 16px;
+    transition: flex-basis 250ms;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: $break-small) {
+      flex-basis: auto;
+    }
+
+    @media screen and (min-width: $break-small) {
+      &:nth-child(odd) {
+        margin-right: 5px;
+      }
+
+      &:nth-child(even) {
+        margin-left: 5px;
+      }
+
+      &:hover {
+        flex-basis: 45%;
+      }
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 20px;
+    }
+
+    .content {
+      margin-top: 16px;
+      text-align: center;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .title {
+        margin: 0;
+        font-weight: 400;
+        font-size: 24px;
+      }
+
+      .subtitle {
+        font-weight: 300;
+
+        span {
+          // preferred line breaks
+          display: inline-block;
+        }
+      }
+
+      .read-more {
+        margin-top: 16px;
+        display: block;
+        padding: 8px 10px;
+      }
+    }
+  }
+}

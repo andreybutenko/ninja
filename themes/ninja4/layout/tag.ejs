@@ -1,0 +1,13 @@
+<main class="page-main page-listing section wide">
+  <h3 class="thin">Posts tagged "<%= page.tag %>"</h3>
+  <% page.posts.sort('priority', -1).each(function(post){ %>
+    <%- partial('_partials/ribbon', {post: post, index: true}) %>
+  <% }) %>
+
+  <div class="ribbon ribbon-blank">
+    <div class="ribbon-body thin">
+
+    </div>
+  </div>
+</main>
+<%- partial('_partials/pagination') %>
