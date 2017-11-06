@@ -1,8 +1,42 @@
-<a href="<%- url_for(post.path) %>" class="box unstyled" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;">
+<%
+  function darken(color, percent) {
+    // Source: http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors/13542669#13542669
+    var f = parseInt(color.slice(1), 16);
+    var t = percent < 0 ? 0 : 255;
+    var p = percent < 0 ? percent * -1 : percent;
+
+    var R = f >> 16;
+    var G = f >> 8&0x00FF
+    var B = f&0x0000FF;
+
+    return "#" +  (0x1000000 + (Math.round((t - R) * p) + R) *  0x10000 + (Math.round((t - G) *  p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+  }
+
+  function getId(title) {
+    return title.replace(/\s+/g, '-').toLowerCase();
+  }
+%>
+
+<div id="<%= getId(post.title) %>" class="box" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;">
   <div class="logo" style="background-image: url('/images/<%= post['icon'] %>');"></div>
   <div class="content">
-    <h3 class="title"><%= post['position'] %></h3>
-    <span class="subtitle"><span><%= post['company'] %>,</span> <span><%= post['timeframe'] %></span></span>
-    <span class="read-more" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+    <div class="header">
+      <h3 class="title"><%= post.position %></h3>
+      <div class="subtitle">
+        <span><%= post.company %></span>
+        &middot;
+        <span><%= post.timeframe %></span>
+      </div>
+    </div>
+    <div class="description">
+      <%- post.content %>
+    </div>
+    <div class="tags">
+      <% post.tags.each(function(tag) { %>
+        <a href="/tags/<%= tag.slug %>" class="unstyled" style="background-color: <%= darken(post['background-color'], post['theme'] == 'dark' ? 0.1 : -0.1) %>;"><%= tag.name %></a>
+      <% }) %>
+      <span onclick="toggleExpanded('<%= getId(post.title) %>')" class="read-more show-expanded" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Collapse <i class="fa fa-angle-up" aria-hidden="true"></i></span>
+      <span onclick="toggleExpanded('<%= getId(post.title) %>')" class="read-more hide-expanded" style="color: <%= post['background-color'] %>; background-color: <%= post['text-color'] %>;">Expand <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+    </div>
   </div>
-</a>
+</div>

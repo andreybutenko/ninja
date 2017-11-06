@@ -1,0 +1,41 @@
+.approach-container {
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: $break-small) {
+    flex-direction: column;
+  }
+
+  .approach {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+
+    @media screen and (max-width: $break-small) {
+      padding: 16px 0;
+    }
+
+    .icon-container {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background-color: black;
+      font-size: 50px;
+      padding: 2px;
+
+      i {
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        background-color: white;
+        padding: 24px;
+      }
+    }
+
+    h3.approach-title {
+      margin-bottom: 4px;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}

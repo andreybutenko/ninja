@@ -1,3 +1,17 @@
+<%
+  function darken(color, percent) {
+    // Source: http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors/13542669#13542669
+    var f = parseInt(color.slice(1), 16);
+    var t = percent < 0 ? 0 : 255;
+    var p = percent < 0 ? percent * -1 : percent;
+
+    var R = f >> 16;
+    var G = f >> 8&0x00FF
+    var B = f&0x0000FF;
+
+    return "#" +  (0x1000000 + (Math.round((t - R) * p) + R) *  0x10000 + (Math.round((t - G) *  p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+  }
+%>
 <div class="post-project">
   <div class="cover hexagon" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;">
     <a class="hex unstyled" style="background-color: <%= post['hex-color'] %>; background-image: url('/images/<%= post['hex-icon'] %>')" href="<%- url_for(post.path) %>"></a>
@@ -10,22 +24,26 @@
   <article class="overlap-content">
     <div class="sidebar">
       <% if(typeof post.links != 'undefined') { %>
-        <% if(post.links.length > 0) { %>
-          <b>Links</b>
-        <% } %>
-        <div class="buttons">
-          <% for(var i = 0; i < post.links.length; i++) { %>
-            <% var data = post.links[i].split(', ') %>
-            <a href="<%= data[2] %>" class="unstyled" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;"><i class="fa fa-<%= data[0] %> fa-fw" aria-hidden="true"></i> <%= data[1] %></a>
+        <div class="buttons-container">
+          <% if(post.links.length > 0) { %>
+            <b>Links</b>
           <% } %>
+          <div class="buttons">
+            <% for(var i = 0; i < post.links.length; i++) { %>
+              <% var data = post.links[i].split(', ') %>
+              <a href="<%= data[2] %>" class="unstyled" style="color: <%= post['text-color'] %>; background-color: <%= darken(post['background-color'], post['theme'] == 'dark' ? 0.3 : -0.3) %>;" target="_blank"><i class="fa fa-<%= data[0] %> fa-fw" aria-hidden="true"></i> <%= data[1] %></a>
+            <% } %>
+          </div>
         </div>
       <% } %>
 
-      <b>Tags</b>
-      <div class="buttons">
-        <% post.tags.each(function(tag) { %>
-          <a href="/tags/<%= tag.slug %>" class="unstyled" style="color: <%= post['text-color'] %>; background-color: <%= post['background-color'] %>;"><%= tag.name %></a>
-        <% }) %>
+      <div class="buttons-container">
+        <b>Tags</b>
+        <div class="buttons">
+          <% post.tags.each(function(tag) { %>
+            <a href="/tags/<%= tag.slug %>" class="unstyled" style="color: <%= post['text-color'] %>; background-color: <%= darken(post['background-color'], post['theme'] == 'dark' ? 0.3 : -0.3) %>;"><%= tag.name %></a>
+          <% }) %>
+        </div>
       </div>
     </div>
     <%- post.content %>

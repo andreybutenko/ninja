@@ -22,7 +22,11 @@
 }
 
 .section.mission {
+  z-index: 5;
+  margin-top: -20px;
   background-color: white;
-  max-width: calc(100% - 20px);
-  border: 1px solid black;
+  box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.75);
+  padding-bottom: 1px;
+  transform: translateZ(1px); // fix stacking issue with the clip-border'd cover
+  text-align: center;
 }

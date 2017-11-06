@@ -25,12 +25,12 @@ This demo improves upon existing fundraising methods by making it easier for par
 ## Screenshots
 {% raw %}
 <div class="gallery">
-  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-1.png"><img src="/images/schoolmarket/ss-1.png"></a>
-  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-2.png"><img src="/images/schoolmarket/ss-2.png"></a>
-  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-3.png"><img src="/images/schoolmarket/ss-3.png"></a>
-  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-4.png"><img src="/images/schoolmarket/ss-4.png"></a>
-  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-5.png"><img src="/images/schoolmarket/ss-5.png"></a>
-  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-6.png"><img src="/images/schoolmarket/ss-6.png"></a>
+  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-1.png" target="_blank"><img src="/images/schoolmarket/ss-1.png"></a>
+  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-2.png" target="_blank"><img src="/images/schoolmarket/ss-2.png"></a>
+  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-3.png" target="_blank"><img src="/images/schoolmarket/ss-3.png"></a>
+  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-4.png" target="_blank"><img src="/images/schoolmarket/ss-4.png"></a>
+  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-5.png" target="_blank"><img src="/images/schoolmarket/ss-5.png"></a>
+  <a data-fancybox="screenshots" href="/images/schoolmarket/ss-6.png" target="_blank"><img src="/images/schoolmarket/ss-6.png"></a>
 </div>
 {% endraw %}
 

@@ -4,7 +4,7 @@ theme: light
 background-color: '#a5f2f3'
 text-color: '#000000'
 hex-color: '#4dc5d6'
-hex-icon: ''
+hex-icon: 'northland-icon.png'
 construction: false
 priority: 6
 timeframe: Spring 2017

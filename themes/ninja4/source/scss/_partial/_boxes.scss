@@ -4,38 +4,46 @@
   width: $page-width;
   max-width: calc(100% - 20px);
   margin: 0 auto;
-
-  @media screen and (max-width: $break-small) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 
   .box {
-    flex: 1 1;
-    flex-basis: 40%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     box-shadow: 0px 5px 18px 0px rgba(0,0,0,0.75);
     padding: 16px;
     transition: flex-basis 250ms;
     margin-bottom: 10px;
 
-    @media screen and (max-width: $break-small) {
-      flex-basis: auto;
+    ul {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 250ms;
     }
 
-    @media screen and (min-width: $break-small) {
-      &:nth-child(odd) {
-        margin-right: 5px;
+    .show-expanded {
+      display: none !important;
+    }
+
+    &.expanded {
+      background-color: #ff0000;
+
+      .hide-expanded {
+        display: none;
       }
 
-      &:nth-child(even) {
-        margin-left: 5px;
+      .show-expanded {
+        display: inherit !important;
       }
 
-      &:hover {
-        flex-basis: 45%;
+      ul {
+        max-height: 999px;
       }
+    }
+
+    @media screen and (max-width: $break-small) {
+      flex-direction: column;
+      align-items: center;
     }
 
     .logo {
@@ -48,32 +56,65 @@
     }
 
     .content {
-      margin-top: 16px;
-      text-align: center;
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex: 1 1;
+      margin-left: 20px;
 
-      .title {
-        margin: 0;
-        font-weight: 400;
-        font-size: 24px;
+      @media screen and (max-width: $break-small) {
+        margin-left: 0;
       }
 
-      .subtitle {
-        font-weight: 300;
+      .header {
+        margin-top: 10px;
 
-        span {
-          // preferred line breaks
-          display: inline-block;
+        @media screen and (max-width: $break-small) {
+          text-align: center;
+        }
+
+        .title {
+          margin: 0;
+          font-weight: 400;
+          font-size: 24px;
+        }
+
+        .subtitle {
+          font-weight: 300;
+
+          span {
+            // preferred line breaks
+            display: inline-block;
+          }
+        }
+
+        .read-more {
+          margin-top: 16px;
+          display: block;
+          padding: 8px 10px;
         }
       }
+    }
 
-      .read-more {
-        margin-top: 16px;
-        display: block;
+    .description {
+      margin-top: 0.5em;
+
+      ul {
+        padding-left: 25px;
+      }
+    }
+
+    .tags {
+      width: 100%;
+      margin: 30px 0 15px 0;
+
+      span, a {
+        cursor: pointer;
         padding: 8px 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+
+        &.read-more {
+          float: right;
+        }
       }
     }
   }

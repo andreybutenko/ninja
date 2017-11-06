@@ -1,6 +1,61 @@
 .ribbon {
   display: flex;
 
+  &.work-ribbon {
+    .logo {
+      flex: 0 0 200px;
+      width: 200px;
+      height: 200px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 20px;
+    }
+
+    .ribbon-body .content {
+      margin-left: 20px;
+
+      .subtitle {
+        font-weight: 300;
+      }
+
+      .description {
+        margin-top: 0.5em;
+        flex: 1;
+
+        ul {
+          padding-left: 25px;
+        }
+      }
+    }
+
+    .show-expanded {
+      display: none !important;
+    }
+
+    ul {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 250ms;
+    }
+
+    &.expanded {
+      background-color: #ff0000;
+
+      .hide-expanded {
+        display: none;
+      }
+
+      .show-expanded {
+        display: inherit !important;
+      }
+
+      ul {
+        max-height: 999px;
+      }
+    }
+  }
+
   .ribbon-body {
     display: flex;
     flex-direction: row-reverse;
@@ -69,12 +124,13 @@
           justify-content: center;
         }
 
-        a {
+        a, span {
           padding: 8px 10px;
           margin-right: 5px;
           margin-bottom: 5px;
           color: rgba(1, 1, 1, 0.5);
           transition: color 250ms;
+          cursor: pointer;
 
           &:hover {
             color: inherit;

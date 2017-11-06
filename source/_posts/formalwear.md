@@ -36,9 +36,9 @@ The Explore page is among the first screens you’ll see when using the app, and
 
 {% raw %}
 <div class="gallery">
-  <a data-fancybox="intro" href="/images/formalwear/explore.png"><img src="/images/formalwear/explore.png"></a>
-  <a data-fancybox="intro" href="/images/formalwear/explore.png"><img src="/images/formalwear/clubs.png"></a>
-  <a data-fancybox="intro" href="/images/formalwear/explore.png"><img src="/images/formalwear/tips.png"></a>
+  <a data-fancybox="intro" href="/images/formalwear/explore.png" target="_blank"><img src="/images/formalwear/explore.png"></a>
+  <a data-fancybox="intro" href="/images/formalwear/explore.png" target="_blank"><img src="/images/formalwear/clubs.png"></a>
+  <a data-fancybox="intro" href="/images/formalwear/explore.png" target="_blank"><img src="/images/formalwear/tips.png"></a>
 </div>
 {% endraw %}
 
@@ -54,9 +54,9 @@ Although the app is currently only available for Android on Google Play, expandi
 
 {% raw %}
 <div class="gallery">
-  <a data-fancybox="tech" href="/images/formalwear/overall-flow.png"><img src="/images/formalwear/overall-flow.png"></a>
-  <a data-fancybox="tech" href="/images/formalwear/server-flow.png"><img src="/images/formalwear/server-flow.png"></a>
-  <a data-fancybox="tech" href="/images/formalwear/client-flow.png"><img src="/images/formalwear/client-flow.png"></a>
+  <a data-fancybox="tech" href="/images/formalwear/overall-flow.png" target="_blank"><img src="/images/formalwear/overall-flow.png"></a>
+  <a data-fancybox="tech" href="/images/formalwear/server-flow.png" target="_blank"><img src="/images/formalwear/server-flow.png"></a>
+  <a data-fancybox="tech" href="/images/formalwear/client-flow.png" target="_blank"><img src="/images/formalwear/client-flow.png"></a>
 </div>
 {% endraw %}
 
@@ -91,15 +91,15 @@ For Formal Wear, I’d like to take some steps to further expand Formal Wear:
 
 {% raw %}
 <div class="gallery">
-  <a data-fancybox="screenshots" href="/images/formalwear/splash.png"><img src="/images/formalwear/splash.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/feed.png"><img src="/images/formalwear/feed.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/explore.png"><img src="/images/formalwear/explore.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/tips.png"><img src="/images/formalwear/tips.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/notifications.png"><img src="/images/formalwear/notifications.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/profile.png"><img src="/images/formalwear/profile.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/clubs.png"><img src="/images/formalwear/clubs.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/questions.png"><img src="/images/formalwear/questions.png"></a>
-  <a data-fancybox="screenshots" href="/images/formalwear/responses.png"><img src="/images/formalwear/responses.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/splash.png" target="_blank"><img src="/images/formalwear/splash.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/feed.png" target="_blank"><img src="/images/formalwear/feed.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/explore.png" target="_blank"><img src="/images/formalwear/explore.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/tips.png" target="_blank"><img src="/images/formalwear/tips.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/notifications.png" target="_blank"><img src="/images/formalwear/notifications.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/profile.png" target="_blank"><img src="/images/formalwear/profile.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/clubs.png" target="_blank"><img src="/images/formalwear/clubs.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/questions.png" target="_blank"><img src="/images/formalwear/questions.png"></a>
+  <a data-fancybox="screenshots" href="/images/formalwear/responses.png" target="_blank"><img src="/images/formalwear/responses.png"></a>
 </div>
 {% endraw %}
 
