@@ -7,7 +7,7 @@ background-color: '#ffffff'
 icon: 'samaritan-icon.png'
 position: React Native Developer
 company: Samaritan
-timeframe: June 2017 - present
+timeframe: June 2017 - December 2017
 length: current
 location: Seattle
 tags:
