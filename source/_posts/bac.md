@@ -6,7 +6,7 @@ text-color: '#ffffff'
 hex-color: '#ffffff'
 hex-icon: 'bac-icon.png'
 construction: false
-priority: 13
+priority: 12
 timeframe: Winter 2017
 tags:
 - WordPress
