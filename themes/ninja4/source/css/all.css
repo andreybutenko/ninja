@@ -472,16 +472,12 @@ template {
       .approach-container .approach {
         padding: 16px 0; } }
     .approach-container .approach .icon-container {
-      -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-              clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      background-color: black;
-      font-size: 50px;
-      padding: 2px; }
+      font-size: 50px; }
       .approach-container .approach .icon-container i {
         -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
                 clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         background-color: white;
-        padding: 24px; }
+        padding: 8px; }
     .approach-container .approach h3.approach-title {
       margin-bottom: 4px; }
     .approach-container .approach p {
