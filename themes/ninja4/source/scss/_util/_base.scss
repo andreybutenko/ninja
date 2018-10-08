@@ -5,8 +5,18 @@ html, body {
 }
 
 body {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #eee;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cover h1,
+.cover h2,
+.ribbon-body .title {
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 * {
