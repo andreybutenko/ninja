@@ -25,6 +25,10 @@ header.page-header {
     justify-content: flex-end;
     margin-right: 16px;
 
+    @media screen and (max-width: 540px) {
+      display: none;
+    }
+
     a {
       padding: 16px;
 

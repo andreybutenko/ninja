@@ -72,7 +72,7 @@
       border-radius: 75px;
       width: 150px;
       height: 150px;
-      border: 2px solid black;
+      border: 2px solid #7f8c8d;
       overflow: hidden;
       margin-bottom: 16px;
     }
@@ -84,7 +84,11 @@
 
     @media screen and (min-width: $break-med) and (max-width: 1100px) {
       text-align: right;
-      margin-right: 20px;
+      margin-right: 40px;
+
+      h1 {
+        margin-right: 0;
+      }
     }
   }
 
