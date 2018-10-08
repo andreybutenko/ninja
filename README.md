@@ -2,7 +2,7 @@
 
 See it live at [andrey.ninja](https://andrey.ninja)
 
-[andreybutenko.com](https://andreybutenko.com) redirects to it if you want something more professional :)
+For a more professional URL, [andreybutenko.com](https://andreybutenko.com) redirects to it :)
 
 ## Development
 
