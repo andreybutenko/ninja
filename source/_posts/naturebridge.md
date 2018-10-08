@@ -6,8 +6,8 @@ text-color: '#ffffff'
 hex-color: '#ebebeb'
 hex-icon: 'naturebridge-icon.png'
 construction: false
-priority: 10
-timeframe: Winter 2017
+priority: 16
+timeframe: Current, since Fall 2017
 tags:
 - Vue
 - EarthGames

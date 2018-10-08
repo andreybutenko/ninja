@@ -8,7 +8,7 @@ icon: 'samaritan-icon.png'
 position: React Native Developer
 company: Samaritan
 timeframe: June 2017 - December 2017
-length: current
+length: 7 months
 location: Seattle
 tags:
 - React Native

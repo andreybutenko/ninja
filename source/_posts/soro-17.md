@@ -8,7 +8,7 @@ icon: 'soro-icon.png'
 position: Front-End Web Developer
 company: Soro Software
 timeframe: August 2017 - October 2017
-length: 2 months
+length: 3 months
 location: Seattle
 tags:
 - Vue

@@ -20,7 +20,7 @@
         <span class="timeframe"><%= post['timeframe'] %></span>
       </header>
       <section class="excerpt">
-        <%- post.excerpt %>
+        <%- post.excerpt || post.content.split('\n')[0] %>
       </section>
       <footer class="footer">
         <% post.tags.each(function(tag) { %>
