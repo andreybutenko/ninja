@@ -13,7 +13,7 @@ tags:
 categories:
 - Projects
 links:
-- rocket, See it yourself!, http://depts.washington.edu/hfsresed/bac/
+- rocket, See it yourself!, http://students.washington.edu/abutenko/hfs/
 ---
 Many students have questions about the budgeting of Housing & Food Services. What do my housing payments go towards? Why are rates the way they are? This site is a quick intro to HFS budgeting!
 <!-- more -->
@@ -23,6 +23,6 @@ To communicate my goals, I first developed a quick prototype using Vue which can
 
 After receiving feedback from my Informatics professor, the Residence Education webmaster, and others, I re-developed the website using straight HTML and JavaScript so that it would be suitable for use in WordPress. This intermediary version can be seen [here](https://codepen.io/andreybutenko/full/BmPONM/).
 
-After getting final approvals, I was able to publish the website on the actual University of Washington website! See it live [here!](http://depts.washington.edu/hfsresed/bac/)
+After getting final approvals, I was able to publish the website on the actual University of Washington website! See it live [here.](http://depts.washington.edu/hfsresed/bac/)
 
-I am currently in the process of marketing this resource to residents.
+However, I have had difficulty maintaining the live version. I no longer have access to the web server and haven't been able to get in touch with admins. You can see the website as it should appear [here!](http://students.washington.edu/abutenko/hfs/)
