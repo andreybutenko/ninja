@@ -681,6 +681,8 @@ template {
     margin-left: auto;
     margin-right: auto;
     padding: 16px; }
+  .section.space-top {
+    padding-top: 24px; }
 
 .section.mission {
   z-index: 5;
